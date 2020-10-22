@@ -6,11 +6,11 @@ const bubblesort = (array) => {
   while (unsorted) {
     unsorted = false;
     for (let i = 0; i < array.length; i ++) {
-      let currentEle = array[i];
-      let nextEle = array[i + 1];
-      if (currentEle > nextEle) {
-        array[i] = nextEle;
-        array[i + 1] = currentEle;
+      let currentNum = array[i];
+      let nextNum = array[i + 1];
+      if (currentNum > nextNum) {
+        array[i + 1] = currentNum;
+        array[i] = nextNum;
         unsorted = true;
       }
     }

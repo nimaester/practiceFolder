@@ -1,3 +1,5 @@
+// selection sort is another basic sorting algo that is similar to bubblesort but sorts lowest values first.
+
 const selectionSort = (array) => {
   for (let i = 0; i < array.length; i ++) {
     let min = i;
@@ -7,9 +9,11 @@ const selectionSort = (array) => {
       }
     }
     if (min !== i) {
-      let currentEle = array[i];
-      array[i] = array[min];
-      array[min] = currentEle;
+      let leastNumber = array[min];
+      let currentNumber = array[i];
+      array[i] = leastNumber;
+      array[min] = currentNumber
+
     }
   }
   return array;
