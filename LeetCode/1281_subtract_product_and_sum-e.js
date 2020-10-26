@@ -21,8 +21,8 @@ const subtractProdcutAndSum = (number) => {
   let sum = 0;
   let product = 1;
   String(number).split("").forEach((num) => {
-    sum += num;
-    product *= num;
+    sum += Number(num);
+    product *= Number(num);
   })
   return product - sum;
 }
