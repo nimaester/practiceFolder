@@ -1,36 +1,20 @@
-// //ForLoop
-// var runningSum = function(nums) {
-//   let sumArray = [];
-//   let total = 0;
-//   for (let i = 0; i < nums.length; i ++) {
-//       total += nums[i];
-//       sumArray.push(total);
-//   }
-//   return sumArray;
-// };
+const same = (arr1, arr2) => {
 
-// //Recursive
-// var runningSum = function(nums) {
-//   let totalArray = [];
-//   let sliceAndAdd =  (array, total) => {
-//       if (!array.length) {
-//           return totalArray;
-//       }
-//       totalArray.push(total += array[0]);
-//       return sliceAndAdd(array.slice(1), total);
-//   }
-//   return sliceAndAdd(nums, 0)
-// }
-
-var runningSum = function(nums,2,1) {
-
-  let total = 0;
-  for (let i = 1; i < nums.length; i ++) {
-    total += nums[i];
-    nums[i] = total;
+  if (arr1.length !== arr2.length) {
+    return false;
   }
-  return nums;
+
+  arr1.forEach((num) => {
+    let squared = arr2.indexOf(num ** 2);
+    if (squared === - 1) {
+      return false;
+    }
+    arr2.splice(squared, 1)
+  })
+  return true;
 }
 
+// first array has values, second array is arr1 values squared
+// check if its eqaul
 
-console.log(runningSum2([1,2,3,4]))
+console.log(same([1,2,3,3], [4,1,4,9]))
