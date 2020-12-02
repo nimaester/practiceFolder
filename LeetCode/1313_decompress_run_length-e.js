@@ -15,6 +15,7 @@
 // Input: nums = [1,1,2,3]
 // Output: [1,3,3]
 
+// first attempt
 const decompressRLElist = (array) => {
   let result = [];
 
@@ -25,7 +26,7 @@ const decompressRLElist = (array) => {
   }
   return result;
 }
-
+// second attempt
 const decompressRLElist = (array) => {
   let result = [];
 

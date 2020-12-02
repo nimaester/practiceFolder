@@ -1,20 +1,25 @@
-const same = (arr1, arr2) => {
 
-  if (arr1.length !== arr2.length) {
-    return false;
-  }
-
-  arr1.forEach((num) => {
-    let squared = arr2.indexOf(num ** 2);
-    if (squared === - 1) {
-      return false;
-    }
-    arr2.splice(squared, 1)
+const counter = (string) => {
+  let counts = {};
+  string.split(" ").join("").toLowerCase().split("").forEach((char) => {
+    counts[char] ? counts[char] ++ : counts[char] = 1
   })
-  return true;
+  return counts
 }
 
-// first array has values, second array is arr1 values squared
-// check if its eqaul
+console.log(counter('this is a string This is another stirng'))
 
-console.log(same([1,2,3,3], [4,1,4,9]))
+const reverse = (string) => {
+  let reverse = ""
+  const reversal = (string) => {
+    if (string.length === 0) {
+      return reverse;
+    }
+    reverse = string[0] + reverse
+    return reversal(string.slice(1))
+  }
+
+  return reversal(string)
+}
+
+console.log(reverse('xurkitree'))

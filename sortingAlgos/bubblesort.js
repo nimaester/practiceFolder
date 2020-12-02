@@ -5,15 +5,15 @@ const bubblesort = (array) => {
   let unsorted = true;
   while (unsorted) {
     unsorted = false;
-    for (let i = 0; i < array.length; i ++) {
-      let currentNum = array[i];
-      let nextNum = array[i + 1];
-      if (currentNum > nextNum) {
-        array[i + 1] = currentNum;
-        array[i] = nextNum;
+    array.forEach((num, idx) => {
+      let cur = num;
+      let nex = array[idx + 1];
+      if (cur > nex) {
+        array[idx] = nex;
+        array[idx + 1] = cur;
         unsorted = true;
       }
-    }
+    })
   }
   return array;
 }
