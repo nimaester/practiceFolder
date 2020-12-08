@@ -1,16 +1,27 @@
-const reverse = (string) => {
+const reverse = (str) => {
   // add whatever parameters you deem necessary - good luck!
-  let result = "";
+  let reversedString = ""
 
-  const recursiveReverse = (string) => {
-    if (!string.length) {
-      return result;
-    }
-    result = string[0] + result;
-    return recursiveReverse(string.slice(1));
-  };
-  return recursiveReverse(string);
+  while (str.length) {
+    reversedString = str[0] + reversedString;
+    str = str.slice(1)
+  }
+  return reversedString;
 };
 
-// console.log(reverse("awesome")); // 'emosewa'
-// console.log(reverse("rithmschool")); // 'loohcsmhtir'
+const reverse2 = (str) => {
+  let reversedString = "";
+
+  const reverseThatString = (str) => {
+    if (!str.length) {
+      return reversedString;
+    } else {
+      return reversedString = reverseThatString(str.slice(1)) + reversedString
+    }
+  }
+
+  return reverseThatString(str);
+}
+
+console.log(reverse2("awesome")); // 'emosewa'
+console.log(reverse("rithmschool")); // 'loohcsmhtir'
