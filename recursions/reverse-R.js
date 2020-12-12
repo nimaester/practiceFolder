@@ -16,7 +16,8 @@ const reverse2 = (str) => {
     if (!str.length) {
       return reversedString;
     } else {
-      return reversedString = reverseThatString(str.slice(1)) + reversedString
+      reversedString = str[0] + reversedString;
+      return reverseThatString(str.slice(1))
     }
   }
 
@@ -24,4 +25,5 @@ const reverse2 = (str) => {
 }
 
 console.log(reverse2("awesome")); // 'emosewa'
-console.log(reverse("rithmschool")); // 'loohcsmhtir'
+console.log(reverse("alomomola")); // 'loohcsmhtir'
+console.log(reverse2("xurkitree"));
