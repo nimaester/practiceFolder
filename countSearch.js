@@ -12,4 +12,4 @@ const naiveSearch = (string, term) => {
   return ocurrences;
 };
 
-console.log(naiveSearch("lololololololoss", "lo"));
+console.log(naiveSearch("lololooloss", "lo"));
