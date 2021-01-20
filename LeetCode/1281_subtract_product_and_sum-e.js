@@ -27,4 +27,4 @@ const subtractProdcutAndSum = (number) => {
   return product - sum;
 }
 
-console.log(subtractProdcutAndSum(4421))
+//console.log(subtractProdcutAndSum(4421))
