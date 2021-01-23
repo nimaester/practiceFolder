@@ -33,13 +33,14 @@ var ParkingSystem = function(big, medium, small) {
     this.spots = [big,medium,small];
   };
 
-  ParkingSystem.prototype.addCar = function(type) {
-      this.spots[type - 1] -= 1
-      return this.spots[type - 1] >= 0
-  };
+ParkingSystem.prototype.addCar = function(type) {
+    this.spots[type - 1] -= 1
+    return this.spots[type - 1] >= 0
+};
 
-console.log(parkingSystem = new ParkingSystem(1, 1, 0));
-console.log(parkingSystem.addCar(0))
-console.log(parkingSystem.addCar(1))
-console.log(parkingSystem.addCar(2))
-console.log(parkingSystem.addCar(0))
+// parkingSystem = new ParkingSystem(1, 1, 0);
+// parkingSystem.addCar(1)
+// parkingSystem.addCar(2)
+// parkingSystem.addCar(3)
+// parkingSystem.addCar(2)
+// console.log(parkingSystem.spots)
