@@ -30,24 +30,13 @@
  */
 
 var ParkingSystem = function(big, medium, small) {
-    this.stack = [big,medium,small];
+    this.spots = [big,medium,small];
   };
 
-  /**
-   * @param {number} carType
-   * @return {boolean}
-   */
-
-  ParkingSystem.prototype.addCar = function(carType) {
-      this.stack[carType - 1] -= 1
-      return this.stack[carType - 1] >= 0
+  ParkingSystem.prototype.addCar = function(type) {
+      this.spots[type - 1] -= 1
+      return this.spots[type - 1] >= 0
   };
-
-  /**
-   * Your ParkingSystem object will be instantiated and called as such:
-   * var obj = new ParkingSystem(big, medium, small)
-   * var param_1 = obj.addCar(carType)
-   */
 
 console.log(parkingSystem = new ParkingSystem(1, 1, 0));
 console.log(parkingSystem.addCar(0))
