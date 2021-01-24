@@ -38,13 +38,15 @@ const numberOfMatches = (n) => {
   const countMatches  = (num) => {
     if ( num === 1) {
       return matches;
-    } else if (num 2 === 0){
+    } else if (num % 2 === 0){
       matches += (num / 2);
       return countMatches(num / 2);
     } else {
-      countMatches += (num - 1) / 2;
+      matches += (num - 1) / 2;
       return ((num-1) / 2) + 1
     }
   }
   return countMatches(n);
 };
+
+console.log(numberOfMatches(7))
