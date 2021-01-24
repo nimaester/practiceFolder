@@ -35,18 +35,34 @@
  */
 const numberOfMatches = (n) => {
   let matches = 0;
-  const countMatches  = (num) => {
-    if ( num === 1) {
+  const countMatches  = (teams) => {
+    if (teams === 1) {
       return matches;
-    } else if (num % 2 === 0){
-      matches += (num / 2);
-      return countMatches(num / 2);
+    } else if (teams % 2 === 0){
+      matches += (teams / 2);
+      return countMatches(teams / 2);
     } else {
-      matches += (num - 1) / 2;
-      return ((num-1) / 2) + 1
+      matches += (teams + 1) / 2;
+      return countMatches(((teams + 1) / 2) - 1);
     }
   }
   return countMatches(n);
 };
 
-console.log(numberOfMatches(7))
+
+
+// const numberOfMatches = (teams) => {
+//   let matches = 0;
+//   while (teams !== 1) {
+//     if (teams % 2 === 0) {
+//       matches += teams / 2;
+//       teams /= 2;
+//     } else {
+//       matches += (teams + 1) / 2;
+//       teams = ((teams + 1) / 2) - 1;
+//     }
+//   }
+//   return matches
+// }
+
+console.log(numberOfMatches(14))
