@@ -35,21 +35,18 @@
  */
 
 const sumOddLengthSubarrays = (arr) => {
-  const results = [];
+  let sum = 0;
 
-  for (let i = 0; i < arr.length; i++) {
-    let counter = 0;
-    let sum = 0;
-    for (let j = i; j < arr.length; j++) {
-      counter++;
-      sum += arr[j];
-      if (counter % 2 !== 0) {
-        results.push(sum);
-      }
-    }
-  }
+	for (let i = 1; i <= arr.length; i += 2) {
 
-  return results.reduce((acc, curr) => acc + curr);
+		for (let j = 0; j <= arr.length - i; j++) {
+			let odd = arr.slice(j, j + i);
+
+			sum += odd.reduce((acc, cv) => acc + cv, 0);
+		}
+	}
+
+	return sum;
 };
 
 
