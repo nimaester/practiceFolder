@@ -38,16 +38,13 @@ const sumOddLengthSubarrays = (arr) => {
   let sum = 0;
 
 	for (let i = 1; i <= arr.length; i += 2) {
-
 		for (let j = 0; j <= arr.length - i; j++) {
 			let odd = arr.slice(j, j + i);
-
 			sum += odd.reduce((acc, cv) => acc + cv, 0);
 		}
 	}
-
 	return sum;
 };
 
 
-console.log(sumOddLengthSubarrays(1,4,2,5,3))
+console.log(sumOddLengthSubarrays([1,4,2,5,3]))
