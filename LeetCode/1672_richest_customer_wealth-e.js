@@ -17,16 +17,12 @@ var sumOfWealth = (account) => {
 
 var maximumWealth = function (accounts) {
   let richest = 0;
-  // for (let account of accounts) {
-  //   if (sumOfWealth(accounts[account]) >= richest) {
-  //     richest = sumOfWealth(accounts[account]);
-  //   }
-  // }
-  for (let i = 0; i < accounts.length; i++) {
-    if (sumOfWealth(accounts[i]) >= richest) {
-      richest = sumOfWealth(accounts[i]);
+
+  accounts.forEach((account) => {
+    if (sumOfWealth(account) >= richest) {
+      richest = sumOfWealth(account);
     }
-  }
+  });
   return richest;
 };
 
@@ -39,11 +35,25 @@ console.log(
   ])
 );
 
-// Input: accounts = [[1,5],[7,3],[3,5]]
+let accounts1 = [
+  [1, 5],
+  [7, 3],
+  [3, 5],
+];
+console.log(maximumWealth(accounts1));
 // Output: 10
 
-// Input: accounts = [[1,2,3],[3,2,1]]
+let accounts2 = [
+  [1, 2, 3],
+  [3, 2, 1],
+];
+console.log(maximumWealth(accounts2));
 // Output: 6
 
-// Input: accounts = [[2,8,7],[7,1,3],[1,9,5]]
+let accounts3 = [
+  [2, 8, 7],
+  [7, 1, 3],
+  [1, 9, 5],
+];
+console.log(maximumWealth(accounts3));
 // Output: 17
