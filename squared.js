@@ -45,6 +45,31 @@ const squared = (arr1, arr2) => {
   return true;
 };
 
-console.log(squared([1, 2, 3], [4, 1, 9]));
-console.log(squared([1, 2, 3], [1, 9]));
-console.log(squared([1, 2, 1], [4, 4, 1]));
+const countFreqs = (array) => {
+  let freqs = {};
+  for (let num of array) {
+    freqs[num] ? freqs[num]++ : (freqs[num] = 1);
+  }
+  return freqs;
+};
+
+const squared2 = (arr1, arr2) => {
+  let freq1 = countFreqs(arr1); // {1:1, 2:1, 3:1}
+  let freq2 = countFreqs(arr2); // {4:1, 1:1, 9:1}
+
+  if (arr1.length !== arr2.length) {
+    return false;
+  }
+
+  for (let key in freq2) {
+    let rooted = Math.sqrt(key);
+    if (freq1[key] !== freq2[rooted]) {
+      return false;
+    }
+  }
+  return true;
+};
+
+console.log(squared2([1, 2, 3], [4, 1, 9])); //true
+console.log(squared2([1, 2, 3], [1, 9])); //false
+console.log(squared2([1, 2, 1], [4, 4, 1])); //false
