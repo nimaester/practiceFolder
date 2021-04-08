@@ -45,6 +45,8 @@ const squared = (arr1, arr2) => {
   return true;
 };
 
+// make use of the Math.sqrt function
+
 const countFreqs = (array) => {
   let freqs = {};
   for (let num of array) {

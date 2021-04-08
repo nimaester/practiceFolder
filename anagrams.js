@@ -24,4 +24,29 @@ const anagrams = (str1, str2) => {
   return true;
 };
 
+const validAnagram = (str1, str2) => {
+  if (str1.length !== str2.length) {
+    return false;
+  }
+
+  let freqs = {};
+
+  for (let letter of str1) {
+    freqs[letter] ? (freqs[letter] += 1) : (freqs[letter] = 1);
+  }
+
+  for (let letter of str2) {
+    if (!freqs[letter] || freqs[letter] === 0) {
+      console.log(freqs);
+      return false;
+    } else {
+      freqs[letter] -= 1;
+    }
+  }
+
+  return true;
+};
+
+console.log(validAnagram("anna", "mana"));
+
 // console.log(anagrams("hello", "helol"));
