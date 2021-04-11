@@ -39,10 +39,17 @@ var countMatches = function (items, ruleKey, ruleValue) {
   return count;
 };
 
+const countMatches2 = (items, ruleKey, ruleValue) => {
+  let values = ["type", "color", "name"];
+  let key = values.indexOf(ruleKey);
+  return items.filter((item) => item[key] === ruleValue).length;
+};
+
 let items2 = [
   ["phone", "blue", "pixel"],
   ["computer", "silver", "phone"],
-  ["phone", "gold", "iphone"],
+  ["phone", "gold", "phone"],
 ];
 // ruleKey = "type", ruleValue = "phone"
 console.log(countMatches(items2, "type", "phone"));
+console.log(countMatches2(items2, "type", "phone"));
