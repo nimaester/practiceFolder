@@ -36,8 +36,7 @@ const validAnagram = (str1, str2) => {
   }
 
   for (let letter of str2) {
-    if (!freqs[letter] || freqs[letter] === 0) {
-      console.log(freqs);
+    if (!freqs[letter]) {
       return false;
     } else {
       freqs[letter] -= 1;

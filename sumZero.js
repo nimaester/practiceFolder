@@ -1,16 +1,17 @@
 const sumZero = (array) => {
-  let first = 0;
-  let last = array.length - 1;
-  while (first < last) {
-    let sum = array[first] + array[last];
+  let start = 0;
+  let end = array.length - 1;
+
+  while (start < end) {
+    let sum = array[start] + array[end];
     if (sum === 0) {
-      return [array[first], array[last]];
+      return [array[start], array[end]];
     } else if (sum > 0) {
-      last--;
+      end--;
     } else {
-      first++;
+      start++;
     }
   }
 };
 
-// console.log(sumZero([-1, -2, -3, 4, 5, 1]));
+console.log(sumZero([]));
