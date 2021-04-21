@@ -26,3 +26,20 @@ var arraySign = function (nums) {
 };
 
 console.log(arraySign([-1, -2, -3, -4, 3, 2, 1]));
+
+// go through array once solution
+
+const arraySign2 = (array) => {
+  let negativeCount = 0;
+  array.forEach((num) => {
+    if (num === 0) {
+      return 0;
+    } else if (num < 0) {
+      negativeCount++;
+    }
+  });
+
+  return negativeCount % 2 === 0 ? 1 : -1;
+};
+
+console.log(arraySign2([-1, -2, -3, -4, 3, 2, 1]));
