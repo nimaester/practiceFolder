@@ -1,7 +1,7 @@
 // Implement a function called countUniqueValues which accepts a sorted
 // array and counts the unique countUniqueValuesin the array. There can
 // be negative numbers in the array but will always be sorted
-// use the sliding window pattern
+// use the multiple pointers pattern
 // Effecient because we only go through the array once
 
 // [1,1,1,2,3,3,4,4]
