@@ -19,6 +19,26 @@ function isSubsequence(query, string) {
   return true;
 }
 
+const isSubsequence2 = (query, string) => {
+  let i = 0;
+  let j = 0;
+
+  if (!query) {
+    return true;
+  }
+
+  while (j < string.length) {
+    if (string[j] === query[i]) {
+      i++;
+    }
+    if (i === query.length) {
+      return true;
+    }
+    j++;
+  }
+  return false;
+};
+
 console.log(isSubsequence("hello", "hello world")); // true
 console.log(isSubsequence("sing", "sting")); // true
 console.log(isSubsequence("abc", "acb")); // false
