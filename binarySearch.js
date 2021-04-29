@@ -16,8 +16,10 @@ const binarySearch = (array, target) => {
   let end = array.length - 1;
   let mid = Math.floor((start + end) / 2);
 
-  while (array[mid] !== target && start <= end) {
-    if (target < array[mid]) {
+  while (start <= end) {
+    if (array[mid] === target) {
+      return mid;
+    } else if (target < array[mid]) {
       end = mid - 1;
     } else {
       start = mid + 1;
@@ -25,7 +27,7 @@ const binarySearch = (array, target) => {
     mid = Math.floor((start + end) / 2);
     console.log(start, mid, end);
   }
-  return array[mid] === target ? mid : -1;
+  return -1;
 };
 
-console.log(binarySearch([1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13], 11));
+console.log(binarySearch([1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13], 0));
