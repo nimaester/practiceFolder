@@ -1,17 +1,31 @@
-function collectStrings(obj) {
-  var stringsArr = [];
-
-  function gatherStrings(o) {
-    for (var key in o) {
-      if (typeof o[key] === "string") {
-        stringsArr.push(o[key]);
-      } else if (typeof o[key] === "object") {
-        return gatherStrings(o[key]);
+const collectStrings = (obj) => {
+  let strings = [];
+  let checkIfString = (obj) => {
+    for (let key in obj) {
+      if (typeof obj[key] === "string") {
+        strings.push(obj[key]);
+      } else if (typeof obj[key] === "object") {
+        return checkIfString(obj[key]);
       }
     }
-  }
+  };
+  checkIfString(obj);
+  return strings;
+};
 
-  gatherStrings(obj);
-
-  return stringsArr;
-}
+let obj = {
+  stuff: "foo",
+  data: {
+    val: {
+      thing: {
+        info: "bar",
+        moreInfo: {
+          evenMoreInfo: {
+            weMadeIt: "baz",
+          },
+        },
+      },
+    },
+  },
+};
+console.log(collectStrings(obj));
