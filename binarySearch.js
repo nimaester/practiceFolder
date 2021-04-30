@@ -14,9 +14,9 @@ then we check if the target is less/equalto last index of left arr or more/equal
 const binarySearch = (array, target) => {
   let start = 0;
   let end = array.length - 1;
-  let mid = Math.floor((start + end) / 2);
 
   while (start <= end) {
+    let mid = Math.floor((start + end) / 2);
     if (array[mid] === target) {
       return mid;
     } else if (target < array[mid]) {
@@ -24,10 +24,8 @@ const binarySearch = (array, target) => {
     } else {
       start = mid + 1;
     }
-    mid = Math.floor((start + end) / 2);
-    console.log(start, mid, end);
   }
   return -1;
 };
 
-console.log(binarySearch([1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13], 0));
+console.log(binarySearch([1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13], 13));

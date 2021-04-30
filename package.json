@@ -1,0 +1,23 @@
+{
+  "name": "practiceFolder",
+  "version": "1.0.0",
+  "description": "Daily leetcode problems, recursions &amp; data structures.",
+  "main": "anagrams.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nimaester/practiceFolder.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/nimaester/practiceFolder/issues"
+  },
+  "homepage": "https://github.com/nimaester/practiceFolder#readme",
+  "dependencies": {
+    "jest": "^26.6.3"
+  }
+}
