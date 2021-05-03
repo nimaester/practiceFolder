@@ -17,13 +17,13 @@ class LinkedList {
     this.length++;
   }
 
-  getAtIndex(value) {
-    if (value < 0 || value >= this.length) {
+  getAtIndex(index) {
+    if (index < 0 || index >= this.length) {
       return null;
     }
 
     let current = this.head;
-    for (let i = 0; i < value; i++) {
+    for (let i = 0; i < index; i++) {
       current = current.next;
     }
     return current.value;
@@ -31,6 +31,16 @@ class LinkedList {
 
   size() {
     return this.length;
+  }
+
+  print() {
+    let result = "";
+    let current = this.head;
+    while (current !== null) {
+      result = `${result}${current.value} > `;
+      current = current.next;
+    }
+    console.log(`${result}null`);
   }
 
   checkValue(value) {
@@ -57,37 +67,15 @@ class LinkedList {
     return oldHead;
   }
 
-  // removeValue(value) {
-  //   while (this.head.next !== null) {
-  //     if (this.head.value === value) {
-  //       return;
-  //     } else {
-  //       let newHead = this.head.next;
-  //       this.head = newHead;
-  //       this.length--;
-  //     }
+  // insertAtIndex(index, value) {
+  //   if (index === 0) {
+  //     this.addToHead(value);
   //   }
-  //   return "nothing found";
+
+  //   let prev = this.getAtIndex(index - 1);
+
+  //   let node = new Node();
   // }
-
-  displayValues() {
-    let result = [];
-
-    for (let i = 0; i < this.length; i++) {
-      result.push(this.head.value);
-      let newHead = this.head.next;
-      this.head = newHead;
-    }
-    return result;
-  }
 }
-
-LinkedList.addToList = (...values) => {
-  let ll = new LinkedList();
-  for (let i = values.length - 1; i >= 0; i--) {
-    ll.addToHead(values[i]);
-  }
-  return ll;
-};
 
 module.exports = LinkedList;
