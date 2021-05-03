@@ -1,6 +1,14 @@
+class Node {
+  constructor(value, next) {
+    this.value = value;
+    this.next = next;
+  }
+}
+
 class LinkedList {
   constructor() {
     this.head = null;
+    this.next = null;
     this.length = 0;
   }
 
@@ -25,6 +33,18 @@ class LinkedList {
   size() {
     return this.length;
   }
+
+  checkValue(value) {
+    let current = this.head;
+    for (let i = 0; i < value; i++) {
+      if (current.value === value) {
+        return true;
+      } else {
+        current = current.next;
+      }
+    }
+    return false;
+  }
 }
 
 LinkedList.addToList = (...values) => {
@@ -35,12 +55,7 @@ LinkedList.addToList = (...values) => {
   return ll;
 };
 
-class Node {
-  constructor(value, next) {
-    this.value = value;
-    this.next = next;
-  }
-}
-
 const ll = LinkedList.addToList(1, 2, 3, 4, 5);
 console.log(ll);
+console.log(ll.size());
+console.log(ll.checkValue(4));
