@@ -53,7 +53,32 @@ class LinkedList {
     let newHead = this.head.next;
     let oldHead = this.head.value;
     this.head = newHead;
+    this.length--;
     return oldHead;
+  }
+
+  // removeValue(value) {
+  //   while (this.head.next !== null) {
+  //     if (this.head.value === value) {
+  //       return;
+  //     } else {
+  //       let newHead = this.head.next;
+  //       this.head = newHead;
+  //       this.length--;
+  //     }
+  //   }
+  //   return "nothing found";
+  // }
+
+  displayValues() {
+    let result = [];
+
+    for (let i = 0; i < this.length; i++) {
+      result.push(this.head.value);
+      let newHead = this.head.next;
+      this.head = newHead;
+    }
+    return result;
   }
 }
 
