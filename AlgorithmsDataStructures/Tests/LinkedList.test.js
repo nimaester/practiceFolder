@@ -57,3 +57,10 @@ describe("#getAtIndex", () => {
     expect(ll.getAtIndex(15)).toBe(null);
   });
 });
+
+describe("#displayValues", () => {
+  test("list the values in the Linked List in an array", () => {
+    const ll = LinkedList.addToList("zero", "one", "two", "three");
+    expect(ll.displayValues()).toStrictEqual(["zero", "one", "two", "three"]);
+  });
+});
