@@ -45,6 +45,16 @@ class LinkedList {
     }
     return false;
   }
+
+  removeHead() {
+    if (this.head === null) {
+      return null;
+    }
+    let newHead = this.head.next;
+    let oldHead = this.head.value;
+    this.head = newHead;
+    return oldHead;
+  }
 }
 
 LinkedList.addToList = (...values) => {
