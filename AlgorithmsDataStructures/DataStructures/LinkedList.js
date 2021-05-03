@@ -16,16 +16,24 @@ class LinkedList {
     }
 
     let current = this.head;
-    for (let i = 1; i < value; i++) {
+    for (let i = 0; i < value; i++) {
       current = current.next;
     }
-    return current;
+    return current.value;
   }
 
   size() {
     return this.length;
   }
 }
+
+LinkedList.addToList = (...values) => {
+  let ll = new LinkedList();
+  for (let i = values.length - 1; i >= 0; i--) {
+    ll.addToHead(values[i]);
+  }
+  return ll;
+};
 
 class Node {
   constructor(value, next) {
@@ -34,9 +42,5 @@ class Node {
   }
 }
 
-const ll = new LinkedList();
-ll.addToHead(1);
-ll.addToHead(2);
+const ll = LinkedList.addToList(1, 2, 3, 4, 5);
 console.log(ll);
-console.log(ll.size());
-console.log(ll.getAtIndex(1));
