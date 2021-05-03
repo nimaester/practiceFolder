@@ -26,7 +26,7 @@ class LinkedList {
     for (let i = 0; i < index; i++) {
       current = current.next;
     }
-    return current.value;
+    return current;
   }
 
   size() {
@@ -67,15 +67,41 @@ class LinkedList {
     return oldHead;
   }
 
-  // insertAtIndex(index, value) {
-  //   if (index === 0) {
-  //     this.addToHead(value);
-  //   }
+  removeAtIndex(index) {
+    if (index < 0 || index > this.length) {
+      return null;
+    }
 
-  //   let prev = this.getAtIndex(index - 1);
+    let prev = this.getAtIndex(index - 1);
+    let after = this.getAtIndex(index + 1);
+    if (prev === null) return null;
+    prev.next = after;
+    this.length--;
+  }
 
-  //   let node = new Node();
-  // }
+  insertAtIndex(index, value) {
+    if (index === 0) {
+      this.addToHead(value);
+    }
+
+    // node {val 0, next: {node {val1, next {node {val2, next, null}}}}} // 1
+    let prev = this.getAtIndex(index - 1);
+    if (prev === null) {
+      return null;
+    }
+
+    prev.next = new Node(value, prev.next);
+    this.length++;
+  }
 }
+
+// creates a linked list for testing purpose
+LinkedList.createLinkedList = (...values) => {
+  const ll = new LinkedList();
+  for (let i = values.length - 1; i >= 0; i--) {
+    ll.addToHead(values[i]);
+  }
+  return ll;
+};
 
 module.exports = LinkedList;
