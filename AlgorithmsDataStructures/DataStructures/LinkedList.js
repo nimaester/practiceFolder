@@ -8,7 +8,6 @@ class Node {
 class LinkedList {
   constructor() {
     this.head = null;
-    this.next = null;
     this.length = 0;
   }
 
@@ -36,7 +35,8 @@ class LinkedList {
 
   checkValue(value) {
     let current = this.head;
-    for (let i = 0; i < value; i++) {
+
+    for (let i = 0; i < this.length; i++) {
       if (current.value === value) {
         return true;
       } else {
@@ -55,7 +55,4 @@ LinkedList.addToList = (...values) => {
   return ll;
 };
 
-const ll = LinkedList.addToList(1, 2, 3, 4, 5);
-console.log(ll);
-console.log(ll.size());
-console.log(ll.checkValue(4));
+module.exports = LinkedList;
