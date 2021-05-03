@@ -130,3 +130,19 @@ describe("#removeAtIndex", () => {
     });
   });
 });
+
+describe("#addToTail", () => {
+  test("adds value to the end of the LinkedList", () => {
+    const ll = LinkedList.createLinkedList(1, 4);
+    ll.addToTail(15);
+    expect(ll.print()).toBe(console.log("1 > 4 > 15 > null"));
+  });
+
+  describe("if a Linked List is empty, add to the beginning of List", () => {
+    test("adds value to the end of the LinkedList", () => {
+      const ll = new LinkedList();
+      ll.addToTail(15);
+      expect(ll.print()).toBe(console.log("15 > null"));
+    });
+  });
+});

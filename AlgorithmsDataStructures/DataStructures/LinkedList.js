@@ -1,5 +1,5 @@
 class Node {
-  constructor(value, next) {
+  constructor(value, next = null) {
     this.value = value;
     this.next = next;
   }
@@ -74,7 +74,6 @@ class LinkedList {
 
     let prev = this.getAtIndex(index - 1);
     let after = this.getAtIndex(index + 1);
-    if (prev === null) return null;
     prev.next = after;
     this.length--;
   }
@@ -92,6 +91,14 @@ class LinkedList {
 
     prev.next = new Node(value, prev.next);
     this.length++;
+  }
+
+  addToTail(value) {
+    if (this.head === null) {
+      this.addToHead(value);
+    }
+    let tail = this.getAtIndex(this.length - 1);
+    tail.next = new Node(value);
   }
 }
 
