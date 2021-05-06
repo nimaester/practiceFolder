@@ -100,6 +100,21 @@ class LinkedList {
     let tail = this.getAtIndex(this.length - 1);
     tail.next = new Node(value);
   }
+
+  reverse() {
+    let node = this.head;
+    let tail = this.getAtIndex(this.length - 1);
+    this.head = tail;
+    let next = null;
+    let prev = null;
+    for (let i = 0; i < this.length; i++) {
+      next = node.next;
+      node.next = prev;
+      prev = node;
+      node = next;
+    }
+    return this;
+  }
 }
 
 // creates a linked list for testing purpose
