@@ -146,3 +146,11 @@ describe("#addToTail", () => {
     });
   });
 });
+
+describe("#reverse", () => {
+  test("reverses a Linked List's order", () => {
+    const ll = LinkedList.createLinkedList(1, 2, 3, 4);
+    ll.reverse();
+    expect(ll.print()).toBe(console.log("4 > 3 > 2 > 1 > null"));
+  });
+});
