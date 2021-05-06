@@ -81,3 +81,27 @@ describe("#unshift", () => {
     });
   });
 });
+
+describe("#getAtIndex", () => {
+  test("returns the node at the indicated index", () => {
+    const dll = new DoublyLinkedList();
+    dll.push(1);
+    dll.push(2);
+    dll.push(3);
+    dll.push(4);
+    dll.unshift(0);
+    expect(dll.getAtIndex(4).val).toBe(4);
+    expect(dll.getAtIndex(0).val).toBe(0);
+    expect(dll.getAtIndex(1).val).toBe(1);
+    expect(dll.getAtIndex(3).val).toBe(3);
+  });
+  describe("empty list or index not found", () => {
+    test("returns undefined if a List is Empty or Index is higher than List length", () => {
+      const dll = new DoublyLinkedList();
+      dll.push(1);
+      dll.pop();
+      let value = dll.getAtIndex(2);
+      expect(value).toBe(undefined);
+    });
+  });
+});

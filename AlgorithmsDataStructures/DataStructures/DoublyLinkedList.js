@@ -74,6 +74,42 @@ class DoublyLinkedList {
     this.length++;
     return this;
   }
+
+  getAtIndex(index) {
+    if (this.length === 0 || index >= this.length) {
+      return undefined;
+    } else if (index === 0) {
+      return this.head;
+    } else if (index === this.length - 1) {
+      return this.tail;
+    }
+
+    if (index <= this.length / 2) {
+      let count = 0;
+      let current = this.head;
+      while (count !== index) {
+        current = this.head.next;
+        count++;
+      }
+      return current;
+    } else {
+      let count = this.length - 1;
+      let current = this.tail;
+      while (count !== index) {
+        current = this.tail.prev;
+        count--;
+      }
+      return current;
+    }
+  }
 }
+
+let dll = new DoublyLinkedList();
+dll.push(1);
+dll.push(2);
+dll.push(3);
+dll.unshift(0);
+let value = dll.getAtIndex(2);
+console.log(value);
 
 module.exports = DoublyLinkedList;
