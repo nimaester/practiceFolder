@@ -105,3 +105,93 @@ describe("#getAtIndex", () => {
     });
   });
 });
+
+describe("#set", () => {
+  test("returns false if index is less than 0 or higher than length of List - 1", () => {
+    const dll = new DoublyLinkedList();
+    dll.push(1);
+    dll.push(2);
+    dll.push(3);
+    dll.push(3);
+    expect(dll.set("four", 15)).toBe(false);
+    expect(dll.set("four", -22)).toBe(false);
+  });
+
+  describe("#changes the value of a node in a specific index", () => {
+    test("returns false if index is less than 0 or higher than length of List - 1", () => {
+      const dll = new DoublyLinkedList();
+      dll.push(1);
+      dll.push(2);
+      dll.push(3);
+      dll.push(3);
+      expect(dll.set(0, 0)).toBe(true);
+      expect(dll.getAtIndex(0).val).toBe(0);
+    });
+  });
+});
+
+describe("#insert", () => {
+  test("inserts at beginning or end of the list", () => {
+    const dll = new DoublyLinkedList();
+    dll.push("zero");
+    dll.insert("another zero", 0);
+    dll.insert("one", 2);
+    expect(dll.getAtIndex(0).val).toBe("another zero");
+    expect(dll.getAtIndex(2).val).toBe("one");
+    expect(dll.insert("not a valid index", -121)).toBe(false);
+  });
+
+  describe("inserts at a index a given value", () => {
+    test("returns true if function is succesful", () => {
+      const dll = new DoublyLinkedList();
+      dll.push("zero");
+      dll.insert("another zero", 0);
+      dll.insert("one", 1);
+      expect(dll.getAtIndex(1).val).toBe("one");
+    });
+  });
+});
+
+describe("#remove", () => {
+  test("removes a certain node in a given index", () => {
+    const dll = new DoublyLinkedList();
+    dll.push("zero");
+    dll.insert("another zero", 0);
+    dll.insert("one", 2);
+    dll.remove(1);
+    expect(dll.getAtIndex(1).val).toBe("one");
+  });
+
+  describe("empty list or index is higher than lists length", () => {
+    test("returns false when index is less than zero or higher than lists length", () => {
+      const dll = new DoublyLinkedList();
+      dll.push("zero");
+      dll.insert("another zero", 0);
+      dll.insert("one", 2);
+      expect(dll.remove(-1)).toBe(false);
+      expect(dll.remove(123)).toBe(false);
+    });
+  });
+
+  describe("if the index is at zero or at the end of the list", () => {
+    test("returns true and removesthe values in the specified index", () => {
+      const dll = new DoublyLinkedList();
+      dll.push(0);
+      dll.push(1);
+      dll.remove(0);
+      dll.unshift(0);
+      dll.remove(1);
+      expect(dll.getAtIndex(0).val).toBe(0);
+    });
+  });
+});
+
+describe("#show", () => {
+  test("returns the values of nodes as a string", () => {
+    const dll = new DoublyLinkedList();
+    dll.push(1);
+    dll.push(2);
+    dll.push(3);
+    expect(dll.show()).toBe("123");
+  });
+});

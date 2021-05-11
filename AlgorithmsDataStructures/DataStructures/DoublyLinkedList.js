@@ -102,14 +102,63 @@ class DoublyLinkedList {
       return current;
     }
   }
-}
 
-let dll = new DoublyLinkedList();
-dll.push(1);
-dll.push(2);
-dll.push(3);
-dll.unshift(0);
-let value = dll.getAtIndex(2);
-console.log(value);
+  set(value, index) {
+    if (index < 0 || index > this.length - 1) {
+      return false;
+    }
+    let valueToChange = this.getAtIndex(index);
+    valueToChange.val = value;
+    return true;
+  }
+
+  insert(value, index) {
+    if (index < 0 || index > this.length) {
+      return false;
+    }
+
+    if (index === 0) {
+      return this.unshift(value);
+    } else if (index === this.length) {
+      return this.push(value);
+    } else {
+      let prevIndex = this.getAtIndex(index - 1);
+      let nextIndex = this.getAtIndex(index);
+      let insertedNode = new Node(value, nextIndex, prevIndex);
+      prevIndex.next = insertedNode;
+    }
+    this.length++;
+    return true;
+  }
+
+  show() {
+    let nums = "";
+    for (let i = 0; i < this.length; i++) {
+      nums += this.getAtIndex(i).val;
+    }
+    return nums;
+  }
+
+  remove(index) {
+    if (index < 0 || index > this.length - 1) {
+      return false;
+    } else if (index === 0) {
+      return this.shift();
+    } else if (index === this.length - 1) {
+      return this.pop();
+    } else {
+      let currentIndex = this.getAtIndex(index);
+      let nextIndex = currentIndex.next;
+      let prevIndex = this.getAtIndex(index - 1);
+      prevIndex.next = nextIndex;
+      nextIndex.prev = prevIndex;
+
+      currentIndex.next = null;
+      currentIndex.prev = null;
+    }
+    this.length--;
+    return true;
+  }
+}
 
 module.exports = DoublyLinkedList;
