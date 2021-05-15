@@ -20,8 +20,8 @@ class Queue {
       this.first = node;
       this.last = node;
     } else {
-      let oldLast = this.last;
-      oldLast.next = node;
+      this.last.next = node;
+      this.last = node;
     }
     this.length++;
     return this;
@@ -40,7 +40,6 @@ class Queue {
     } else {
       this.first = oldFirst.next;
       oldFirst.next = null;
-    }
     this.length--;
     return oldFirst;
   }
