@@ -40,6 +40,7 @@ class Queue {
     } else {
       this.first = oldFirst.next;
       oldFirst.next = null;
+    }
     this.length--;
     return oldFirst;
   }
