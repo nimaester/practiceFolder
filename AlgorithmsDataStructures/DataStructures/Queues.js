@@ -1,3 +1,4 @@
+//FIRST IN FIRST OUT
 class Node {
   constructor(value) {
     this.val = value;
@@ -5,46 +6,44 @@ class Node {
   }
 }
 
-// LAST IN FIRST OUT
-class Stack {
+class Queue {
   constructor() {
     this.first = null;
     this.last = null;
     this.length = 0;
   }
 
-  push(value) {
+  // adding to end of the queue
+  enqueue(value) {
     let node = new Node(value);
-    if (this.length === 0) {
+    if (!this.length) {
       this.first = node;
       this.last = node;
     } else {
-      let temp = this.first;
-      node.next = temp;
-      this.first = node;
-      this.last = temp;
+      let oldLast = this.last;
+      oldLast.next = node;
     }
     this.length++;
     return this;
   }
 
-  pop() {
+  // removing from beginning of the queue
+  dequeue() {
     if (this.length === 0) {
       return undefined;
     }
 
-    let temp = this.first;
+    let oldFirst = this.first;
     if (this.length === 1) {
       this.first = null;
       this.last = null;
     } else {
-      let newFirst = temp.next;
-      this.start = newFirst;
-      temp.next = null;
+      this.first = oldFirst.next;
+      oldFirst.next = null;
     }
     this.length--;
-    return temp;
+    return oldFirst;
   }
 }
 
-module.exports = Stack;
+module.exports = Queue;
