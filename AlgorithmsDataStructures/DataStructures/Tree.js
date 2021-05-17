@@ -42,10 +42,38 @@ class Bst {
       }
     }
   }
+
+  find(value) {
+    if (this.root.val === value) {
+      return true;
+    }
+
+    let currentNode = this.root;
+    while (true) {
+      if (value < currentNode.val) {
+        if (currentNode.left === null) {
+          return false;
+        } else if (currentNode.left.val === value) {
+          return true;
+        } else {
+          currentNode = currentNode.left;
+        }
+      } else {
+        if (currentNode.right === null) {
+          return false;
+        } else if (currentNode.right.val === value) {
+          return true;
+        } else {
+          currentNode = currentNode.right;
+        }
+      }
+    }
+  }
 }
 
 let tree = new Bst();
 tree.insert(6);
 tree.insert(4);
-console.log(tree);
+console.log(tree.find(11));
+// console.log(tree);
 module.exports = Bst;
