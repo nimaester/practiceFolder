@@ -36,5 +36,14 @@ describe("#dequeue", () => {
     });
   });
 
-
+  describe("adds new nodes to the last of the queue and removes from beginning of queue", () => {
+    test("sets a new start or new last when node is removed", () => {
+      const q = new Queue();
+      q.enqueue("first");
+      q.enqueue("second");
+      q.enqueue("third");
+      expect(q.dequeue().val).toBe("first");
+      expect(q.length).toBe(2);
+    });
+  });
 });
