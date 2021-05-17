@@ -11,7 +11,7 @@ class Node {
   }
 }
 
-class BST {
+class Bst {
   constructor() {
     this.root = null;
   }
@@ -24,7 +24,7 @@ class BST {
     } else {
       let current = this.root;
       while (true) {
-        if (value < current.value) {
+        if (value < current.val) {
           if (current.left === null) {
             current.left = node;
             return this;
@@ -44,6 +44,8 @@ class BST {
   }
 }
 
-let tree = new BST();
-
-module.exports = BST;
+let tree = new Bst();
+tree.insert(6);
+tree.insert(4);
+console.log(tree);
+module.exports = Bst;
