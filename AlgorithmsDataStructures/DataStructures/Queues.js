@@ -1,4 +1,8 @@
 //FIRST IN FIRST OUT
+// BIG O of queues, Insertion o(1), removal o(1), searching o(n), access o(n)
+// useful for processing tasks
+// Insertion and removal has to be o(1)
+
 class Node {
   constructor(value) {
     this.val = value;
