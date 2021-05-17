@@ -46,14 +46,11 @@ describe("#insert", () => {
 describe("#find", () => {
   test("returns true or false if a value is found in the tree", () => {
     const tree = new Bst();
-    tree.insert(5);
     tree.insert(4);
     tree.insert(3);
     tree.insert(6);
     tree.insert(7);
-    expect(tree.find(5)).toBe(true);
-    expect(tree.find(4)).toBe(true);
-    expect(tree.find(7)).toBe(true);
+    expect(tree.find(3)).toBe(true);
     expect(tree.find(6)).toBe(true);
     expect(tree.find(2)).toBe(false);
     expect(tree.find(8)).toBe(false);

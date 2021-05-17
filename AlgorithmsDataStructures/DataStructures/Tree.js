@@ -2,6 +2,7 @@
 // Lists are linear, trees are non-linear
 // Examples of trees: HTML DOM, Decision tree (AI) or folders in an OS
 // binary search trees are sorted, left is less than root/parent right is more than root/parent
+// BST are best and average case O(log n) insertion and searching
 
 class Node {
   constructor(value) {
@@ -59,6 +60,10 @@ class Bst {
       }
     }
     return false;
+  }
+
+  bfs() {
+    //breadth first search
   }
 }
 
