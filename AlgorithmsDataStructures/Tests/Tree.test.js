@@ -59,4 +59,11 @@ describe("#find", () => {
     expect(tree.find(8)).toBe(false);
     expect(tree.find(100)).toBe(false);
   });
+
+  describe("finds a value in an empty tree", () => {
+    test("returns false if when used on an empty tree", () => {
+      const tree = new Bst();
+      expect(tree.find(1)).toBe(false);
+    });
+  });
 });

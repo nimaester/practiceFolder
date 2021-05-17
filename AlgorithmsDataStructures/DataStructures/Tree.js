@@ -44,36 +44,22 @@ class Bst {
   }
 
   find(value) {
-    if (this.root.val === value) {
-      return true;
+    if (this.root === null) {
+      return false;
     }
 
     let currentNode = this.root;
-    while (true) {
+    while (currentNode) {
       if (value < currentNode.val) {
-        if (currentNode.left === null) {
-          return false;
-        } else if (currentNode.left.val === value) {
-          return true;
-        } else {
-          currentNode = currentNode.left;
-        }
+        currentNode = currentNode.left;
+      } else if (value > currentNode.val) {
+        currentNode = currentNode.right;
       } else {
-        if (currentNode.right === null) {
-          return false;
-        } else if (currentNode.right.val === value) {
-          return true;
-        } else {
-          currentNode = currentNode.right;
-        }
+        return true;
       }
     }
+    return false;
   }
 }
 
-let tree = new Bst();
-tree.insert(6);
-tree.insert(4);
-console.log(tree.find(11));
-// console.log(tree);
 module.exports = Bst;
