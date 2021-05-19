@@ -69,6 +69,7 @@ class Bst {
     let queue = [];
 
     queue.push(node);
+
     while (queue.length) {
       node = queue.shift();
       data.push(node);
@@ -78,6 +79,7 @@ class Bst {
         queue.push(node.right);
       }
     }
+    return data;
   }
 }
 
