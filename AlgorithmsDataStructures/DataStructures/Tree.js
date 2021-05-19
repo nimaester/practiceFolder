@@ -64,6 +64,20 @@ class Bst {
 
   bfs() {
     //breadth first search
+    let node = this.root;
+    let data = [];
+    let queue = [];
+
+    queue.push(node);
+    while (queue.length) {
+      node = queue.shift();
+      data.push(node);
+      if (node.left) {
+        queue.push(node.left);
+      } else if (node.right) {
+        queue.push(node.right);
+      }
+    }
   }
 }
 
