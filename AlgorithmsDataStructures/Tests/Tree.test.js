@@ -77,7 +77,7 @@ describe("#bfs", () => {
   });
 });
 
-describe("#dfsPreorder", () => {
+describe("#dfsPreOrder", () => {
   test("returns an array corresponding the tree's depth values", () => {
     const tree = new Bst();
     tree.insert(10);
@@ -86,6 +86,19 @@ describe("#dfsPreorder", () => {
     tree.insert(3);
     tree.insert(8);
     tree.insert(20);
-    expect(tree.dfsPreorder()).toEqual([10, 6, 3, 8, 15, 20]);
+    expect(tree.dfsPreOrder()).toEqual([10, 6, 3, 8, 15, 20]);
+  });
+});
+
+describe("#dfsPostOrder", () => {
+  test("returns an array corresponding the tree's depth values", () => {
+    const tree = new Bst();
+    tree.insert(10);
+    tree.insert(6);
+    tree.insert(15);
+    tree.insert(3);
+    tree.insert(8);
+    tree.insert(20);
+    expect(tree.dfsPostOrder()).toEqual([3, 8, 6, 20, 15, 10]);
   });
 });

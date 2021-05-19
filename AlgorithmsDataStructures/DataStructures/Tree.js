@@ -82,10 +82,24 @@ class Bst {
     return data;
   }
 
-  dfsPreorder() {
+  dfsPreOrder() {
     let result = [];
     let recurse = (node) => {
       result.push(node.val);
+      if (node.left) {
+        recurse(node.left);
+      }
+      if (node.right) {
+        recurse(node.right);
+      }
+    };
+    recurse(this.root);
+    return result;
+  }
+
+  dfsPostOrder() {
+    let result = [];
+    let recurse = (node) => {
       if (node.left) {
         recurse(node.left);
       }
@@ -93,6 +107,8 @@ class Bst {
       if (node.right) {
         recurse(node.right);
       }
+
+      result.push(node.val);
     };
     recurse(this.root);
     return result;
