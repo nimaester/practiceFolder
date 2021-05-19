@@ -72,15 +72,24 @@ class Bst {
 
     while (queue.length) {
       node = queue.shift();
-      data.push(node);
+      data.push(node.val);
       if (node.left) {
         queue.push(node.left);
-      } else if (node.right) {
+      }
+      if (node.right) {
         queue.push(node.right);
       }
     }
     return data;
   }
 }
+
+const tree = new Bst();
+tree.insert(4);
+tree.insert(3);
+tree.insert(6);
+tree.insert(7);
+tree.insert(2);
+console.log(tree.bfs());
 
 module.exports = Bst;

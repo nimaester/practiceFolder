@@ -64,3 +64,15 @@ describe("#find", () => {
     });
   });
 });
+
+describe("#bfs", () => {
+  test("returns an array corresponding the tree's depth values", () => {
+    const tree = new Bst();
+    tree.insert(4);
+    tree.insert(3);
+    tree.insert(6);
+    tree.insert(7);
+    tree.insert(2);
+    expect(tree.bfs()).toEqual([4, 3, 6, 2, 7]);
+  });
+});
