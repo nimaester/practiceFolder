@@ -67,10 +67,9 @@ class Bst {
     let node = this.root;
     let data = [];
     let queue = [];
-
     queue.push(node);
 
-    while (queue.length) {
+    while (queue.length > 0) {
       node = queue.shift();
       data.push(node.val);
       if (node.left) {
@@ -82,14 +81,22 @@ class Bst {
     }
     return data;
   }
-}
 
-const tree = new Bst();
-tree.insert(4);
-tree.insert(3);
-tree.insert(6);
-tree.insert(7);
-tree.insert(2);
-console.log(tree.bfs());
+  dfsPreorder() {
+    let result = [];
+    let recurse = (node) => {
+      result.push(node.val);
+      if (node.left) {
+        recurse(node.left);
+      }
+
+      if (node.right) {
+        recurse(node.right);
+      }
+    };
+    recurse(this.root);
+    return result;
+  }
+}
 
 module.exports = Bst;

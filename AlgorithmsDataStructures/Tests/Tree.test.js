@@ -76,3 +76,16 @@ describe("#bfs", () => {
     expect(tree.bfs()).toEqual([4, 3, 6, 2, 7]);
   });
 });
+
+describe("#dfsPreorder", () => {
+  test("returns an array corresponding the tree's depth values", () => {
+    const tree = new Bst();
+    tree.insert(10);
+    tree.insert(6);
+    tree.insert(15);
+    tree.insert(3);
+    tree.insert(8);
+    tree.insert(20);
+    expect(tree.dfsPreorder()).toEqual([10, 6, 3, 8, 15, 20]);
+  });
+});
