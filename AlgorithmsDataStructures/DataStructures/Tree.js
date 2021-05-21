@@ -1,8 +1,9 @@
 // trees have a parent child relationship
-// Lists are linear, trees are non-linear
+// Lists are linear, trees are non-linear data structures
 // Examples of trees: HTML DOM, Decision tree (AI) or folders in an OS
 // binary search trees are sorted, left is less than root/parent right is more than root/parent
 // BST are best and average case O(log n) insertion and searching
+//
 
 class Node {
   constructor(value) {
@@ -83,6 +84,8 @@ class Bst {
   }
 
   dfsPreOrder() {
+    //depth first search
+    //check the tree for left values first then the right starting from root
     let result = [];
     let checkBranches = (node) => {
       result.push(node.val);
@@ -98,6 +101,7 @@ class Bst {
   }
 
   dfsPostOrder() {
+    //
     let result = [];
     let checkBranches = (node) => {
       if (node.left) {
@@ -115,6 +119,7 @@ class Bst {
   }
 
   dfsInOrder() {
+    // sorts the values in the tree in ascending order
     let result = [];
 
     let checkBranches = (node) => {
