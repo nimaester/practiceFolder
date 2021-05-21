@@ -102,3 +102,16 @@ describe("#dfsPostOrder", () => {
     expect(tree.dfsPostOrder()).toEqual([3, 8, 6, 20, 15, 10]);
   });
 });
+
+describe("#dfsInOrder", () => {
+  test("returns a sorted array corresponding the tree's values", () => {
+    const tree = new Bst();
+    tree.insert(10);
+    tree.insert(6);
+    tree.insert(15);
+    tree.insert(3);
+    tree.insert(8);
+    tree.insert(20);
+    expect(tree.dfsInOrder()).toEqual([3, 6, 8, 10, 15, 20]);
+  });
+});

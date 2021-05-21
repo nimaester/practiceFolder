@@ -84,33 +84,50 @@ class Bst {
 
   dfsPreOrder() {
     let result = [];
-    let recurse = (node) => {
+    let checkBranches = (node) => {
       result.push(node.val);
       if (node.left) {
-        recurse(node.left);
+        checkBranches(node.left);
       }
       if (node.right) {
-        recurse(node.right);
+        checkBranches(node.right);
       }
     };
-    recurse(this.root);
+    checkBranches(this.root);
     return result;
   }
 
   dfsPostOrder() {
     let result = [];
-    let recurse = (node) => {
+    let checkBranches = (node) => {
       if (node.left) {
-        recurse(node.left);
+        checkBranches(node.left);
       }
 
       if (node.right) {
-        recurse(node.right);
+        checkBranches(node.right);
       }
 
       result.push(node.val);
     };
-    recurse(this.root);
+    checkBranches(this.root);
+    return result;
+  }
+
+  dfsInOrder() {
+    let result = [];
+
+    let checkBranches = (node) => {
+      if (node.left) {
+        checkBranches(node.left);
+      }
+      result.push(node.val);
+
+      if (node.right) {
+        checkBranches(node.right);
+      }
+    };
+    checkBranches(this.root);
     return result;
   }
 }
