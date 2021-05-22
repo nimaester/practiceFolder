@@ -38,17 +38,10 @@ class MaxBinaryHeap {
 
 
     let newMax = this.values.pop();
-    let
     while(this.values[0] < )
 
     return this
   }
 }
-let mbh = new MaxBinaryHeap();
-mbh.insert(99);
-mbh.insert(40);
-mbh.insert(55);
-mbh.insert(88);
-console.log(mbh);
 
 module.exports = MaxBinaryHeap;
