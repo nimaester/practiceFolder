@@ -26,6 +26,23 @@ class MaxBinaryHeap {
     }
     return this;
   }
+
+  // fix this tommorow
+  removeMax() {
+    if (this.values.length === 0) {
+      return undefined
+    }
+    if (this.values.length === 1) {
+      return this;
+    }
+
+
+    let newMax = this.values.pop();
+    let
+    while(this.values[0] < )
+
+    return this
+  }
 }
 let mbh = new MaxBinaryHeap();
 mbh.insert(99);
