@@ -30,17 +30,15 @@ class MaxBinaryHeap {
   // fix this tommorow
   removeMax() {
     if (this.values.length === 0) {
-      return undefined
+      return undefined;
     }
     if (this.values.length === 1) {
       return this;
     }
 
-
     let newMax = this.values.pop();
-    while(this.values[0] < )
 
-    return this
+    return this;
   }
 }
 
