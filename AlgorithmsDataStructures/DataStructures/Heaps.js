@@ -63,7 +63,11 @@ class MaxBinaryHeap {
 
   removeMax() {
     if (this.values.length === 0) {
-      return null;
+      return undefined;
+    }
+
+    if (this.values.length === 1) {
+      return this.values.pop();
     }
     let oldMax = this.values[0];
     this.values[0] = this.values.pop();
@@ -72,13 +76,4 @@ class MaxBinaryHeap {
   }
 }
 
-let mbh = new MaxBinaryHeap();
-mbh.insert(5);
-mbh.insert(35);
-mbh.insert(17);
-mbh.insert(85);
-mbh.insert(12);
-mbh.insert(8);
-mbh.removeMax();
-console.log(mbh.values);
 module.exports = MaxBinaryHeap;
