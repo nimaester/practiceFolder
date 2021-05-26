@@ -5,8 +5,7 @@
 // PSEUDOCODE
 // Input = array
 // Output = sorted squared array
-// Constraints = what is the length of the array? 1000+ or less
-//
+// Constraints = what is the max & min length of the array?
 // Edge Cases = negative numbers? positive numbers? floats?
 
 // we iterate the array
@@ -15,7 +14,9 @@
 // for sorting the squared array, we can use helper function to the square array
 // return the result of running the sorting helper function to the squared array
 
-// HELPER FUNCTION
+// HELPER FUNCTION (sorting)
+// ** this is a good sorting algorithm if our array is almost sorted **
+// ** if array is totally random and unsorted then a merge sort or quicksort could be more beneficial to this problem **
 // we iterate the array starting from the second number in the array (we start at second because we will decrement our position if a condition is met)
 // make variable to corespond as our position in the array;
 // while our position is not the end of the array we check if the first number is more than second number
@@ -49,4 +50,5 @@ const squaredAndSorted = (array) => {
   return sortArray(squaredArray);
 };
 
+console.log(squaredAndSorted([7, 1, 9, 2, 6]));
 module.exports = squaredAndSorted;
