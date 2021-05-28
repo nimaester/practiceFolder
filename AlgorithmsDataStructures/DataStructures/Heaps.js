@@ -27,7 +27,8 @@ class MaxBinaryHeap {
     return this;
   }
 
-  // fix this tommorow
+  // swapping values, takes the last value in the array and switch with the max(root/first ele in array) value then checks if children are lower than new root value. if not switch. keep switching till everything is in order
+
   siftDown() {
     let idx = 0;
     const length = this.values.length;
