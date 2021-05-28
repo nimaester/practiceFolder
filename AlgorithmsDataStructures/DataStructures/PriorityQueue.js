@@ -5,6 +5,14 @@ class Node {
   }
 }
 
-class PriorityQueue {}
+class PriorityQueue {
+  constructor() {
+    this.values = [];
+  }
+
+  enqueue() {}
+
+  dequeue() {}
+}
 
 module.exports = PriorityQueue;
