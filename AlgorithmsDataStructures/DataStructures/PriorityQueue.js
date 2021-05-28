@@ -57,7 +57,7 @@ class PriorityQueue {
       parentIdx = 0;
     }
 
-    while (this.values[idx].priority > this.values[parentIdx].priority) {
+    while (this.values[idx].priority < this.values[parentIdx].priority) {
       let parentVal = this.values[parentIdx];
       let idxVal = this.values[idx];
       this.values[idx] = parentVal;
