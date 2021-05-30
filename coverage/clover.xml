@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1622006593619" clover="3.2.0">
-  <project timestamp="1622006593619" name="All files">
-    <metrics statements="335" coveredstatements="335" conditionals="121" coveredconditionals="121" methods="47" coveredmethods="47" elements="503" coveredelements="503" complexity="0" loc="335" ncloc="335" packages="1" files="6" classes="6"/>
+<coverage generated="1622237512766" clover="3.2.0">
+  <project timestamp="1622237512766" name="All files">
+    <metrics statements="328" coveredstatements="328" conditionals="123" coveredconditionals="123" methods="47" coveredmethods="47" elements="498" coveredelements="498" complexity="0" loc="328" ncloc="328" packages="1" files="6" classes="6"/>
     <file name="DoublyLinkedList.js" path="/Users/mainfolder/Desktop/Practices/dailyPractice/practiceFolder/AlgorithmsDataStructures/DataStructures/DoublyLinkedList.js">
       <metrics statements="101" coveredstatements="101" conditionals="44" coveredconditionals="44" methods="11" coveredmethods="11"/>
       <line num="3" count="44" type="stmt"/>
@@ -107,54 +107,47 @@
       <line num="164" count="1" type="stmt"/>
     </file>
     <file name="Heaps.js" path="/Users/mainfolder/Desktop/Practices/dailyPractice/practiceFolder/AlgorithmsDataStructures/DataStructures/Heaps.js">
-      <metrics statements="47" coveredstatements="47" conditionals="16" coveredconditionals="16" methods="4" coveredmethods="4"/>
+      <metrics statements="40" coveredstatements="40" conditionals="18" coveredconditionals="18" methods="4" coveredmethods="4"/>
       <line num="11" count="5" type="stmt"/>
-      <line num="15" count="19" type="stmt"/>
-      <line num="16" count="19" type="stmt"/>
-      <line num="17" count="19" type="stmt"/>
-      <line num="19" count="19" type="stmt"/>
-      <line num="20" count="9" type="stmt"/>
-      <line num="21" count="9" type="stmt"/>
-      <line num="22" count="9" type="stmt"/>
-      <line num="23" count="9" type="stmt"/>
-      <line num="24" count="9" type="stmt"/>
-      <line num="25" count="9" type="stmt"/>
-      <line num="27" count="19" type="stmt"/>
-      <line num="32" count="3" type="stmt"/>
-      <line num="33" count="3" type="stmt"/>
-      <line num="34" count="3" type="stmt"/>
-      <line num="35" count="3" type="stmt"/>
-      <line num="36" count="7" type="stmt"/>
-      <line num="37" count="7" type="stmt"/>
-      <line num="39" count="7" type="stmt"/>
-      <line num="41" count="7" type="cond" truecount="2" falsecount="0"/>
-      <line num="42" count="5" type="stmt"/>
-      <line num="43" count="5" type="cond" truecount="2" falsecount="0"/>
-      <line num="44" count="2" type="stmt"/>
-      <line num="47" count="7" type="cond" truecount="2" falsecount="0"/>
-      <line num="48" count="4" type="stmt"/>
-      <line num="49" count="4" type="cond" truecount="2" falsecount="0"/>
-      <line num="53" count="2" type="stmt"/>
-      <line num="57" count="7" type="cond" truecount="2" falsecount="0"/>
-      <line num="58" count="4" type="stmt"/>
-      <line num="59" count="4" type="stmt"/>
-      <line num="60" count="4" type="stmt"/>
-      <line num="65" count="4" type="cond" truecount="2" falsecount="0"/>
-      <line num="66" count="1" type="stmt"/>
-      <line num="68" count="3" type="stmt"/>
-      <line num="69" count="3" type="stmt"/>
-      <line num="70" count="3" type="stmt"/>
-      <line num="71" count="3" type="stmt"/>
-      <line num="75" count="1" type="stmt"/>
-      <line num="76" count="1" type="stmt"/>
-      <line num="77" count="1" type="stmt"/>
-      <line num="78" count="1" type="stmt"/>
-      <line num="79" count="1" type="stmt"/>
+      <line num="15" count="14" type="stmt"/>
+      <line num="16" count="14" type="stmt"/>
+      <line num="17" count="14" type="stmt"/>
+      <line num="19" count="14" type="stmt"/>
+      <line num="20" count="6" type="stmt"/>
+      <line num="21" count="6" type="stmt"/>
+      <line num="22" count="6" type="stmt"/>
+      <line num="23" count="6" type="stmt"/>
+      <line num="24" count="6" type="stmt"/>
+      <line num="25" count="6" type="stmt"/>
+      <line num="27" count="14" type="stmt"/>
+      <line num="33" count="2" type="stmt"/>
+      <line num="34" count="2" type="stmt"/>
+      <line num="35" count="2" type="stmt"/>
+      <line num="36" count="2" type="stmt"/>
+      <line num="37" count="4" type="stmt"/>
+      <line num="38" count="4" type="stmt"/>
+      <line num="40" count="4" type="stmt"/>
+      <line num="42" count="4" type="cond" truecount="2" falsecount="0"/>
+      <line num="43" count="3" type="stmt"/>
+      <line num="44" count="3" type="cond" truecount="2" falsecount="0"/>
+      <line num="45" count="1" type="stmt"/>
+      <line num="48" count="4" type="cond" truecount="2" falsecount="0"/>
+      <line num="49" count="2" type="stmt"/>
+      <line num="50" count="2" type="cond" truecount="2" falsecount="0"/>
+      <line num="54" count="1" type="stmt"/>
+      <line num="58" count="4" type="cond" truecount="2" falsecount="0"/>
+      <line num="59" count="2" type="stmt"/>
+      <line num="60" count="2" type="stmt"/>
+      <line num="61" count="2" type="stmt"/>
+      <line num="66" count="4" type="cond" truecount="2" falsecount="0"/>
+      <line num="67" count="1" type="stmt"/>
+      <line num="70" count="3" type="cond" truecount="2" falsecount="0"/>
+      <line num="71" count="1" type="stmt"/>
+      <line num="73" count="2" type="stmt"/>
+      <line num="74" count="2" type="stmt"/>
+      <line num="75" count="2" type="stmt"/>
+      <line num="76" count="2" type="stmt"/>
       <line num="80" count="1" type="stmt"/>
-      <line num="81" count="1" type="stmt"/>
-      <line num="82" count="1" type="stmt"/>
-      <line num="83" count="1" type="stmt"/>
-      <line num="84" count="1" type="stmt"/>
     </file>
     <file name="LinkedList.js" path="/Users/mainfolder/Desktop/Practices/dailyPractice/practiceFolder/AlgorithmsDataStructures/DataStructures/LinkedList.js">
       <metrics statements="67" coveredstatements="67" conditionals="19" coveredconditionals="19" methods="13" coveredmethods="13"/>

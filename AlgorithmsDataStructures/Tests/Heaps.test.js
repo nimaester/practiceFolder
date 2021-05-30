@@ -23,7 +23,15 @@ describe("#insert", () => {
   describe("removing from an empty heap", () => {
     test("returns null if using removeMax from an empty heap", () => {
       let mbh = new MaxBinaryHeap();
-      expect(mbh.removeMax()).toBeNull();
+      expect(mbh.removeMax()).toBe(undefined);
+    });
+  });
+
+  describe("removing a heap that has one value", () => {
+    test("returns the removed value", () => {
+      let mbh = new MaxBinaryHeap();
+      mbh.insert(1);
+      expect(mbh.removeMax()).toBe(1);
     });
   });
 
