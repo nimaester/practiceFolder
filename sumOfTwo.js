@@ -2,7 +2,8 @@
 // Determine if there is a pair of numbers, where one is from array
 // a and the other from array b, that can be added together to get the
 // sum of the target value. if a pair exists return true, else false.
-var t0 = performance.now();
+
+let it = 1000;
 
 const sumOfTwo = (arr1, arr2, target) => {
   for (let i = 0; i < arr1.length; i++) {
@@ -32,6 +33,14 @@ const sumOfTwo2 = (arr1, arr2, target) => {
   return false;
 };
 
-sumOfTwo([1, 2, 3, 4, 5, 6, 7], [5, 4, 6, 7, 2, 1], 12);
-var t1 = performance.now();
-console.log("Call to doSomething took " + (t1 - t0) + " milliseconds.");
+console.time("Function #1");
+for (let i = 0; i < it; i++) {
+  sumOfTwo([1, 2, 3, 4, 5, 6, 7], [5, 4, 6, 7, 2, 1], 12);
+}
+console.timeEnd("Function #1");
+
+console.time("Function #2");
+for (let i = 0; i < it; i++) {
+  sumOfTwo2([1, 2, 3, 4, 5, 6, 7], [5, 4, 6, 7, 2, 1], 12);
+}
+console.timeEnd("Function #2");
