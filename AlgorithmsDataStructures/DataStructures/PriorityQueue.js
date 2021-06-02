@@ -86,12 +86,4 @@ class PriorityQueue {
   }
 }
 
-let pq = new PriorityQueue();
-pq.enqueue("forty", 4);
-pq.enqueue("forty", 3);
-pq.enqueue("sixty", 6);
-pq.enqueue("forty", 10);
-pq.enqueue("forty", 2);
-pq.dequeue();
-console.log(pq);
 module.exports = PriorityQueue;
