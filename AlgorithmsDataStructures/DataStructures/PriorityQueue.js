@@ -3,7 +3,7 @@
 
 class Node {
   constructor(val, priority) {
-    this.values = val;
+    this.value = val;
     this.priority = priority;
   }
 }
@@ -25,15 +25,15 @@ class PriorityQueue {
 
       if (leftChildIdx < length) {
         leftChild = this.values[leftChildIdx];
-        if (leftChild > element) {
+        if (leftChild.priority < element.priority) {
           swap = leftChildIdx;
         }
       }
       if (rightChildIdx < length) {
         rightChild = this.values[rightChildIdx];
         if (
-          (swap === null && rightChild > element) ||
-          (swap !== null && rightChild > leftChild)
+          (swap === null && rightChild.priority < element.priority) ||
+          (swap !== null && rightChild.priority < leftChild.priority)
         ) {
           swap = rightChildIdx;
         }
@@ -71,7 +71,19 @@ class PriorityQueue {
     return this;
   }
 
-  dequeue() {}
+  dequeue() {
+    if (this.values.length === 0) {
+      return undefined;
+    }
+
+    if (this.values.length === 1) {
+      return this.values.pop();
+    }
+    let oldMax = this.values[0];
+    this.values[0] = this.values.pop();
+    this.siftDown();
+    return oldMax;
+  }
 }
 
 let pq = new PriorityQueue();
@@ -80,5 +92,6 @@ pq.enqueue("forty", 3);
 pq.enqueue("sixty", 6);
 pq.enqueue("forty", 10);
 pq.enqueue("forty", 2);
+pq.dequeue();
 console.log(pq);
 module.exports = PriorityQueue;
