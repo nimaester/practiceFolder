@@ -3,7 +3,7 @@
 // hash tables need a hashing function to change string keys into indices
 
 class HashTable {
-  constructor(size = 7) {
+  constructor(size = 3) {
     this.table = new Array(size);
   }
 
@@ -66,5 +66,12 @@ class HashTable {
     return arrayOfValues;
   }
 }
+
+let ht = new HashTable();
+ht.set("apple", "red");
+ht.set("banana", "yellow");
+ht.set("grape", "purple");
+ht.set("kiwi", "green");
+console.log(ht);
 
 module.exports = HashTable;
