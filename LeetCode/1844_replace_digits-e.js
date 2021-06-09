@@ -29,3 +29,5 @@ var replaceDigits = function (s) {
   }
   return result;
 };
+
+console.log(replaceDigits("a1b2c3d4e"));
