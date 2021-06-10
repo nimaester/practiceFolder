@@ -11,20 +11,18 @@
 //  * @param {string} s
 //  * @return {string}
 //  */
-let shift = (x, y) => {
-  x = x.charCodeAt(0);
-  x += parseInt(y);
-  return String.fromCharCode(x);
-};
 
 var replaceDigits = function (s) {
   let result = "";
 
   for (let i = 0; i < s.length; i++) {
+    let letter = s[i];
     if (i % 2 === 0) {
-      result += s[i];
+      result += letter;
     } else {
-      result += shift(s[i - 1], s[i]);
+      let nextLetter = s[i - 1].charCodeAt(0); // gets the charCode of the previous element
+      nextLetter += Number(s[i]); // adds the number of skips to the next letter
+      result += String.fromCharCode(nextLetter);
     }
   }
   return result;
