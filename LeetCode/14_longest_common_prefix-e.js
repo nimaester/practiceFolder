@@ -5,11 +5,11 @@
 
 // If there is no common prefix, return an empty string "".
 
- /*
- * @param {string[]} strs
- * @return {string}
- */
+ //
+ //@param {string[]} strs
+ //@return {string}
+ //
  
-var longestCommonPrefix = function(strs) {
+const longestCommonPrefix = (strs) => {
     
 };
