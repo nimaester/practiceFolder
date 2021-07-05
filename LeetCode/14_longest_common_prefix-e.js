@@ -10,6 +10,27 @@
  //@return {string}
  //
  
-const longestCommonPrefix = (strs) => {
-    
+const longestCommonPrefix = (strArray) => {
+  if (strArray.length === 0){
+        return "";
+  } else if (strArray.length === 1){
+        return strArray[0];
+  }
+ 
+ let currentStr = strArray[0];
+ 
+    for (let i = currentStr.length; i >= 0; i--){
+        let match = 0;
+        for (let j = 1; j < strArray.length; j++){
+            if (currentStr === strArray[j].substring(0, i)){
+                match++;
+            } else {
+                continue;
+            }
+        }
+        if (match === strArray.length - 1){
+            return currentStr;
+        }
+        currentStr = currentStr.substring(0, i-1);
+    }
 };
