@@ -1,11 +1,14 @@
 const areThereDuplicates = (...args) => {
   let freqs = {};
-  let solution = false;
 
   for (let ele of args) {
-    freqs[ele] ? (solution = true) : (freqs[ele] = 1);
+    if (freqs[ele]) {
+      return true;
+    } else {
+      freqs[ele] = 1;
+    }
   }
-  return solution;
+  return false;
 };
 
 console.log(areThereDuplicates(1, 2, 3, 1));
