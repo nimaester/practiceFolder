@@ -48,22 +48,34 @@
 
 var romanToInt = function (s) {
   let values = [];
-  var symbols = { I: 1, V: 5, X: 10, L: 50, C: 100, D: 500, M: 1000 };
-  for (let i = 0; i < s.length; i++) {
-    values.push(symbols[s[i]]);
-  }
   let total = 0;
-  for (let j = 0; j < values.length; j++) {
-    if (values[j] < values[j + 1]) {
-      total -= values[j];
+
+  const romanNumbers = { I: 1, V: 5, X: 10, L: 50, C: 100, D: 500, M: 1000 };
+
+  for (let value of s) {
+    values.push(romanNumbers[value]);
+  }
+
+  for (let i = 0; i < values.length; i++) {
+    if (values[i] < values[i + 1]) {
+      total -= values[i];
     } else {
-      total += values[j];
+      total += values[i];
     }
   }
+
   return total;
 };
+//
+// [1000,100,1000,10,100,1,5]
+// create a values array to store each individual string values
+// create a total variable to keep track of our current total
+// create object that has the value of each letter in the string
+// we refer to that object and we put each value of a letter to our values array
+// we itertate through our values array
+// if our current number is less than the number following it we subtract its value from the total
+// if its not then we just add the value to our total
+// return total
 
 console.log(romanToInt("X"));
 console.log(romanToInt("MCMXCIV"));
-console.log(romanToInt("X"));
-console.log(romanToInt("X"));
