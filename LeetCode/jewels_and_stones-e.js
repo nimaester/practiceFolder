@@ -24,18 +24,18 @@
 */
 
 const numJewelsInStones = (j, s) => {
-  let count = 0 ;
+  let count = 0;
   let jewels = j.split("");
   let stones = s.split("");
 
-  for (let i = 0; i < stones.length; i ++) {
+  for (let i = 0; i < stones.length; i++) {
     let stone = stones[i];
     if (jewels.includes(stone)) {
-      count ++;
+      count++;
     }
   }
   return count;
-}
+};
 
 // var numJewelsInStones = function(J, S) {
 //   const set = new Set();
@@ -51,5 +51,21 @@ const numJewelsInStones = (j, s) => {
 //   return ans;
 // };
 
-console.log(numJewelsInStones("aA", "aAAbbbb"))
-console.log(numJewelsInStones("z", "ZZ"))
+// console.log(numJewelsInStones("aA", "aAAbbbb"))
+// console.log(numJewelsInStones("z", "ZZ"))
+
+let fn = (num) => {
+  console.log(num);
+};
+
+for (var i = 0; i < 3; i++) {
+  setTimeout(function () {
+    fn(i);
+  }, 0);
+}
+
+for (let i = 0; i < 3; i++) {
+  setTimeout(function () {
+    fn(i);
+  }, 0);
+}
