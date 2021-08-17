@@ -28,13 +28,6 @@ const removeKFromList = (l, k) => {
   return l;
 };
 
-// Example
-// For l = [3, 1, 2, 3, 4, 5] and k = 3, the output should be
-// removeKFromList(l, k) = [1, 2, 4, 5];
-
-// For l = [1, 2, 3, 4, 5, 6, 7] and k = 10, the output should be
-// removeKFromList(l, k) = [1, 2, 3, 4, 5, 6, 7].
-
 let ll = new LinkedList();
 ll.addToHead(5);
 ll.addToHead(4);
@@ -56,6 +49,13 @@ let ll3 = new LinkedList();
 ll3.addToHead(3);
 ll3.addToHead(2);
 ll3.addToHead(1);
+
+// Example
+// For l = [3, 1, 2, 3, 4, 5] and k = 3, the output should be
+// removeKFromList(l, k) = [1, 2, 4, 5];
+
+// For l = [1, 2, 3, 4, 5, 6, 7] and k = 10, the output should be
+// removeKFromList(l, k) = [1, 2, 3, 4, 5, 6, 7].
 
 let k = removeKFromList(ll.head, 3);
 console.log(listToArray(k).join("") === "1245");
