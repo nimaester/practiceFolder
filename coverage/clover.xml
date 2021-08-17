@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1628734920840" clover="3.2.0">
-  <project timestamp="1628734920840" name="All files">
-    <metrics statements="416" coveredstatements="414" conditionals="158" coveredconditionals="153" methods="59" coveredmethods="59" elements="633" coveredelements="626" complexity="0" loc="416" ncloc="416" packages="1" files="8" classes="8"/>
+<coverage generated="1629197537177" clover="3.2.0">
+  <project timestamp="1629197537178" name="All files">
+    <metrics statements="415" coveredstatements="413" conditionals="158" coveredconditionals="153" methods="59" coveredmethods="59" elements="632" coveredelements="625" complexity="0" loc="415" ncloc="415" packages="1" files="8" classes="8"/>
     <file name="DoublyLinkedList.js" path="/Users/nimpoy/Desktop/practice_folder/practiceFolder/AlgorithmsDataStructures/DataStructures/DoublyLinkedList.js">
       <metrics statements="101" coveredstatements="101" conditionals="44" coveredconditionals="44" methods="11" coveredmethods="11"/>
       <line num="3" count="44" type="stmt"/>
@@ -191,7 +191,7 @@
       <line num="80" count="1" type="stmt"/>
     </file>
     <file name="LinkedList.js" path="/Users/nimpoy/Desktop/practice_folder/practiceFolder/AlgorithmsDataStructures/DataStructures/LinkedList.js">
-      <metrics statements="70" coveredstatements="69" conditionals="19" coveredconditionals="18" methods="12" coveredmethods="12"/>
+      <metrics statements="69" coveredstatements="68" conditionals="19" coveredconditionals="18" methods="12" coveredmethods="12"/>
       <line num="3" count="54" type="stmt"/>
       <line num="4" count="54" type="stmt"/>
       <line num="10" count="15" type="stmt"/>
@@ -213,8 +213,8 @@
       <line num="43" count="3" type="stmt"/>
       <line num="44" count="3" type="stmt"/>
       <line num="45" count="3" type="stmt"/>
-      <line num="46" count="11" type="stmt"/>
-      <line num="47" count="11" type="stmt"/>
+      <line num="46" count="8" type="stmt"/>
+      <line num="47" count="8" type="stmt"/>
       <line num="49" count="3" type="stmt"/>
       <line num="53" count="3" type="stmt"/>
       <line num="54" count="3" type="stmt"/>
@@ -253,7 +253,6 @@
       <line num="115" count="4" type="stmt"/>
       <line num="116" count="4" type="stmt"/>
       <line num="117" count="4" type="stmt"/>
-      <line num="119" count="1" type="stmt"/>
       <line num="120" count="1" type="stmt"/>
       <line num="125" count="1" type="stmt"/>
       <line num="126" count="10" type="stmt"/>
