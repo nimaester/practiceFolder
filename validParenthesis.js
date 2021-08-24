@@ -7,8 +7,9 @@ const validParenthesis = (str) => {
     if (openers.includes(char)) {
       result.push(char);
     } else if (closers.includes(char)) {
-      let lastIndex = result.length - 1;
-      if (openers.indexOf(result[lastIndex]) === closers.indexOf(char)) {
+      if (
+        openers.indexOf(result[result.length - 1]) === closers.indexOf(char)
+      ) {
         result.pop();
       } else {
         return false;
