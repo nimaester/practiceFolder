@@ -15,9 +15,6 @@ $   used to specify the end of the string that matches the condition
 [0-9] match a single interger from 0-9. Same as [a-z] specify which number you specifically want
 ?   can be used as an optional character
 {1,3} range of length of chars that you want after the []
-()
-
-
 
 */
 
@@ -25,4 +22,5 @@ $   used to specify the end of the string that matches the condition
 
 // console.log(/[aeiou1]/.test("shyn1"));
 console.log(/this is your [0-9]/.test(str));
-console.log(/(file)+/.exec(files));
+let data = /(file)/.exec(files);
+console.log(data);
