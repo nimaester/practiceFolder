@@ -33,5 +33,5 @@ const reverseStringOnly = (str) => {
     }
   }
 
-  return string.join("");
+  return str.join("");
 };
