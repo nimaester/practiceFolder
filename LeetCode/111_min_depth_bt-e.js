@@ -51,5 +51,18 @@ var minDepth = function (root) {
   }
 };
 
-let root = [2, null, 3, null, 4, null, 5, null, 6];
-console.log(minDepth(root));
+/*
+
+
+amazon shopping recently lauched a new item whose daily customer ratings for n days is represented by the array ratings. They monitor these ratings to identify producats taht are not performing well. Find the number of groups that can be formed cosisiteing of 1 or more conseutive days such that the rating continuously decreases ovedr the days
+
+the rating is consecutively decreasing if it has the form : r, r-1, r-2... and so on, wheer r is the rating on the first day of the group being considered. Two groups are considered different if they contain the ratings of different consecutive days
+
+ex
+rat = [4, 3, 5, 4, 3]
+
+there are 9 periords ins which the rating consecutively decreaess
+5 one day periods 4, 3, 5, 4, 3
+3 two day periods 43, 54, 43,
+1 three day period 543
+*/
