@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1629197537177" clover="3.2.0">
-  <project timestamp="1629197537178" name="All files">
+<coverage generated="1635246887116" clover="3.2.0">
+  <project timestamp="1635246887117" name="All files">
     <metrics statements="415" coveredstatements="413" conditionals="158" coveredconditionals="153" methods="59" coveredmethods="59" elements="632" coveredelements="625" complexity="0" loc="415" ncloc="415" packages="1" files="8" classes="8"/>
     <file name="DoublyLinkedList.js" path="/Users/nimpoy/Desktop/practice_folder/practiceFolder/AlgorithmsDataStructures/DataStructures/DoublyLinkedList.js">
       <metrics statements="101" coveredstatements="101" conditionals="44" coveredconditionals="44" methods="11" coveredmethods="11"/>

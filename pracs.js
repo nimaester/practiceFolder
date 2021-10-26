@@ -88,14 +88,13 @@ class SinglyLinkedList {
     if (pos === this.length - 1) this.tail = node;
     return true;
   }
+
+  rotate(num) {}
 }
 
 const ll = new SinglyLinkedList();
 ll.push(1);
 ll.push(2);
+ll.push(3);
+// ll.rotate(2);
 // console.log(ll);
-ll.pop();
-console.log(ll.pop());
-console.log(ll);
-ll.insert(1, "one");
-console.log(ll);
