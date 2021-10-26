@@ -42,3 +42,7 @@ const addBranchValues = (arr, idx) => {
 
 console.log(getLargerBranch([3, 6, 2, 9, -1, 10]));
 console.log(getLargerBranch([1, 10, 5, 1, 0, 6]));
+
+const arr = [];
+arr[0] = "hi";
+console.log(arr);
