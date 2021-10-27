@@ -1,26 +1,38 @@
+// const runningSum = (arr) => {
+//   let x = 1;
+//   let sum = x;
+//   for (let i = 0; i < arr.length; i++) {
+//     sum = sum + arr[i];
+//     console.log(`1:   sum:${sum} x:${x} i:${i}`);
+//     if (sum < 1) {
+//       while (sum < 1) {
+//         x++;
+//         sum++;
+//       }
+//     } else {
+//       sum += arr[i];
+//     }
+//     console.log(`sum:${sum} x:${x} i:${i}`);
+//   }
+//   return x;
+// };
 
-const counter = (string) => {
-  let counts = {};
-  string.split(" ").join("").toLowerCase().split("").forEach((char) => {
-    counts[char] ? counts[char] ++ : counts[char] = 1
-  })
-  return counts
-}
+const runningSum = (arr) => {
+  let x = 0;
+  for (let i = x; x < Infinity; x++) {
+    let sum = x;
 
-console.log(counter('this is a string This is another stirng'))
-
-const reverse = (string) => {
-  let reverse = ""
-  const reversal = (string) => {
-    if (string.length === 0) {
-      return reverse;
+    for (let num of arr) {
+      sum += num;
+      console.log(`sum:${sum} x:${x}`);
+      if (sum < 1) {
+        break;
+      }
     }
-    reverse = string[0] + reverse
-    return reversal(string.slice(1))
+    if (sum >= 1) {
+      return x;
+    }
   }
-
-  return reversal(string)
-}
-
-console.log(reverse('xurkitree'))
-
+  return 0;
+};
+console.log(runningSum([-5, 4, -2, 3, 1, -1, -6, -1, 0, -5]));

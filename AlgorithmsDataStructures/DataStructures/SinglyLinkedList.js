@@ -1,16 +1,3 @@
-const d = new Date().getDay();
-const s = new Date().getFullYear();
-
-const getRand = (min, max) => {
-  // inclusive
-  return Math.floor(Math.random() * (max - min + 1)) + min;
-};
-
-const getRandNon = (min, max) => {
-  // exclusive
-  return Math.floor(Math.random() * (max - min)) + min;
-};
-
 class Node {
   constructor(val) {
     this.val = val;
@@ -124,10 +111,3 @@ class SinglyLinkedList {
     return prev;
   }
 }
-
-const ll = new SinglyLinkedList();
-ll.push(1);
-ll.push(2);
-ll.push(3);
-ll.reverse();
-console.log(ll);
