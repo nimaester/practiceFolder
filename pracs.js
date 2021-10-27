@@ -11,123 +11,23 @@ const getRandNon = (min, max) => {
   return Math.floor(Math.random() * (max - min)) + min;
 };
 
-class Node {
-  constructor(val) {
-    this.val = val;
-    this.next = null;
+const counter = (arr) => {
+  let counts = {};
+  arr.forEach((num) => (counts[num] ? counts[num]++ : (counts[num] = 1)));
+  return counts;
+};
+
+const frequencyCounter = (arr1, arr2) => {
+  if (arr1.length !== arr2.length) return false;
+
+  const arr1Count = counter(arr1);
+  const arr2Count = counter(arr2);
+
+  for (const key in arr1Count) {
+    if (!arr2Count[key ** 2]) return false;
+    if (arr2Count[key ** 2] !== arr1Count[key]) return false;
   }
-}
+  return true;
+};
 
-class SinglyLinkedList {
-  constructor() {
-    this.head = null;
-    this.tail = null;
-    this.length = 0;
-  }
-
-  push(val) {
-    let node = new Node(val);
-    this.length === 0 ? (this.head = node) : (this.tail.next = node);
-    this.tail = node;
-    this.length++;
-    return this;
-  }
-
-  pop() {
-    if (this.length === 0) return undefined;
-    if (this.length === 1) {
-      let oldTail = this.tail;
-      this.head = null;
-      this.tail = null;
-      this.length--;
-      return oldTail;
-    } else {
-      let temp = this.head;
-      while (temp.next.next !== null) {
-        let oldTail = temp.next;
-        temp.next = null;
-        this.tail = temp;
-        this.length--;
-        return oldTail;
-      }
-    }
-  }
-
-  get(idx) {
-    if (idx < 0 || idx > this.length - 1) return undefined;
-    let pos = 0;
-    let temp = this.head;
-    while (pos !== idx) {
-      temp = temp.next;
-      pos++;
-    }
-    return temp;
-  }
-  set(idx, val) {
-    let node = this.get(idx);
-    if (node === undefined) return false;
-    node.val = val;
-    return true;
-  }
-
-  insert(idx, val) {
-    if (idx < 0 || idx > this.length) return false;
-    let cur = this.head;
-    let prev = null;
-    let pos = 0;
-    while (pos !== idx) {
-      prev = cur;
-      cur = cur.next;
-      pos++;
-    }
-    let node = new Node(val);
-    prev.next = node;
-    node.next = cur;
-    this.length++;
-    if (pos === 0) this.head = node;
-    if (pos === this.length - 1) this.tail = node;
-    return true;
-  }
-
-  rotate(num) {
-    if (num > this.length)
-      num = num - this.length * Math.floor(num / this.length);
-    if (num < 0) num = this.length + num;
-    if (!num) return;
-
-    let node = this.head;
-    while (num) {
-      this.head = node.next;
-      this.tail.next = node;
-      this.tail = node;
-      node.next = null;
-      node = this.head;
-      num--;
-    }
-  }
-  reverse() {
-    if (this.length === 0) return;
-    let prev;
-    let current = this.head;
-    let next;
-    this.tail = current;
-
-    while (current) {
-      next = current.next;
-      current.next = prev;
-      prev = current;
-      current = next;
-    }
-
-    this.tail.next = null;
-    this.head = prev;
-    return prev;
-  }
-}
-
-const ll = new SinglyLinkedList();
-ll.push(1);
-ll.push(2);
-ll.push(3);
-ll.reverse();
-console.log(ll);
+console.log(frequencyCounter([1, 2, 3, 4, 5], [4, 9, 25, 1, 16]));
