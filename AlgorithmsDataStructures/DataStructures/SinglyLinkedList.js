@@ -77,20 +77,21 @@ class SinglyLinkedList {
   }
 
   rotate(num) {
-    if (num > this.length)
-      num = num - this.length * Math.floor(num / this.length);
+    if (num > this.length) num = num % this.length;
     if (num < 0) num = this.length + num;
     if (!num) return;
+    let counter = 0;
 
     let node = this.head;
-    while (num) {
+    while (counter !== num) {
       this.head = node.next;
-      this.tail.next = node;
-      this.tail = node;
       node.next = null;
+      this.tail = node;
       node = this.head;
-      num--;
+      counter++;
     }
+
+    return this;
   }
   reverse() {
     if (this.length === 0) return;
@@ -108,6 +109,13 @@ class SinglyLinkedList {
 
     this.tail.next = null;
     this.head = prev;
-    return prev;
+    return this;
   }
 }
+
+const ll = new SinglyLinkedList();
+ll.push(1);
+ll.push(2);
+ll.push(3);
+ll.push(4);
+console.log(ll.reverse());
