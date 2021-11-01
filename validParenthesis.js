@@ -1,23 +1,25 @@
 const validParenthesis = (str) => {
-  let result = [];
-  let openers = ["[", "{", "("];
-  let closers = ["]", "}", ")"];
+  if (str.length === 0) return true;
 
-  for (let char of str) {
-    if (openers.includes(char)) {
-      result.push(char);
-    } else if (closers.includes(char)) {
-      if (
-        openers.indexOf(result[result.length - 1]) === closers.indexOf(char)
-      ) {
-        result.pop();
-      } else {
-        return false;
-      }
+  const stack = [];
+
+  const parens = {
+    "}": "{",
+    ")": "(",
+    "]": "[",
+  };
+
+  for (let p of str) {
+    if (p === "(" || p === "{" || p === "[") {
+      stack.push(p);
+    } else if (parens[p] === stack[stack.length - 1]) {
+      stack.pop();
+    } else {
+      return false;
     }
   }
 
-  return result.length === 0;
+  return stack.length === 0;
 };
 
 console.log(validParenthesis("()")); //=>true

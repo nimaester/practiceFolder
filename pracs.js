@@ -30,4 +30,28 @@ const frequencyCounter = (arr1, arr2) => {
   return true;
 };
 
-console.log(frequencyCounter([1, 2, 3, 4, 5], [4, 9, 25, 1, 16]));
+// console.log(frequencyCounter([1, 2, 3, 4, 5], [4, 9, 25, 1, 16]));
+
+class Car {
+  constructor(brand) {
+    this.brand = brand;
+  }
+  present() {
+    return `I have a ${this.brand}`;
+  }
+}
+
+class Model extends Car {
+  constructor(brand, model) {
+    super(brand);
+    this.model = model;
+  }
+
+  show() {
+    return `${this.present()}, its a ${this.model}`;
+  }
+}
+
+let c = new Car("ACURA");
+let b = new Model(, "SSX");
+console.log(b.show());
