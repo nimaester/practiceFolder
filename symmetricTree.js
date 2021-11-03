@@ -13,3 +13,4 @@ const isSymmetricTree = (root) => {
   return checker(root.left, root.right)
 }
 
+
