@@ -45,4 +45,32 @@ const minSubArraySum = (arr, num) => {
   return shortest === null ? 0 : shortest;
 };
 
-console.log(minSubArraySum([3, 1, 7, 11, 2, 9, 8, 21, 62, 33, 19], 52));
+// console.log(minSubArraySum([3, 1, 7, 11, 2, 9, 8, 21, 62, 33, 19], 52));
+
+const findLongestSubstring = (str) => {
+  if (!str.length) return 0;
+  let i = 0;
+  let j = 1;
+  let longest = 1;
+  let current = 0;
+  let checked = {};
+  checked[str[i]] = i;
+
+  while (j < str.length) {
+    if (checked.hasOwnProperty(str[j])) {
+      checked[str[j]] = j;
+      current = j - i + 1;
+      if (current > longest) longest = current;
+      j++;
+    } else {
+      i = checked[str[j]] + 1;
+      j = i + 1;
+      checked = {};
+      checked[str[i]] = i;
+    }
+  }
+
+  return longest;
+};
+
+console.log(findLongestSubstring("bbbbb"));
