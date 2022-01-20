@@ -57,7 +57,7 @@ const findLongestSubstring = (str) => {
   checked[str[i]] = i;
 
   while (j < str.length) {
-    if (checked.hasOwnProperty(str[j])) {
+    if (!checked.hasOwnProperty(str[j])) {
       checked[str[j]] = j;
       current = j - i + 1;
       if (current > longest) longest = current;
@@ -73,4 +73,13 @@ const findLongestSubstring = (str) => {
   return longest;
 };
 
-console.log(findLongestSubstring("bbbbb"));
+// console.log(findLongestSubstring("gamestop"));
+
+const fun = (a) => {
+  if (!b) return a;
+  return function (b) {
+    return a + b;
+  };
+};
+
+console.log(fun(1));
