@@ -113,7 +113,7 @@ class SinglyLinkedList {
     let prev = null;
     let current = this.head;
     this.tail = current;
-    let next = current.next;
+    let next = null;
     while (current) {
       next = current.next;
       current.next = prev;
@@ -135,8 +135,8 @@ class SinglyLinkedList {
   }
 }
 
-const ll = new SinglyLinkedList();
-ll.push(1);
-ll.push(2);
-ll.push(3);
-console.log(ll.reverse());
+// const ll = new SinglyLinkedList();
+// ll.push(1);
+// ll.push(2);
+// ll.push(3);
+// console.log(ll.reverse());
