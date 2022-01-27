@@ -50,6 +50,7 @@ class SinglyLinkedList {
       this.head = node;
     }
     this.length++;
+    return this;
   }
 
   shift() {
@@ -73,24 +74,60 @@ class SinglyLinkedList {
     let node = this.get(idx);
     return node ? ((node.val = val), true) : false;
   }
+
+  insert(idx, val) {
+    if (idx === 0) {
+      this.unshift(val);
+    } else if (idx === this.length) {
+      this.push(val);
+    } else if (!this.get(idx - 1) || idx < 0) {
+      return false;
+    } else {
+      let prevNode = this.get(idx - 1);
+      let node = new Node(val, prevNode.next);
+      prevNode.next = node;
+      this.length++;
+      return this;
+    }
+  }
+
+  remove(idx) {
+    if (idx > this.length - 1 || idx < 0) {
+      return false;
+    } else if (idx === this.length - 1) {
+      this.pop();
+    } else if (idx === 0) {
+      this.shift();
+    } else {
+      let prevNode = this.get(idx - 1);
+      let nodeToRemove = this.get(idx);
+      prevNode.next = nodeToRemove.next;
+      this.length--;
+      return this;
+    }
+  }
+
+  display() {
+    let arr = [];
+    let current = this.head;
+    while (current) {
+      arr.push(current.val);
+      current = current.next;
+    }
+    console.log(arr, ` ==> LENGTH: ${this.length}`);
+  }
 }
 
 const ll = new SinglyLinkedList();
-ll.push("1st");
-ll.push("2nd");
-ll.push("3rd");
-ll.pop();
-ll.pop();
-ll.pop();
-ll.pop();
-ll.unshift("1st");
-ll.unshift("2nd");
-ll.unshift("3rd");
-
-// ll.shift();
-// ll.shift();
-// ll.shift();
-
-console.log(ll.get(2));
-console.log(ll.set(0, "FIRST"));
-console.log(ll);
+ll.push("end");
+ll.push("new end");
+ll.unshift("start");
+ll.insert(1, "second");
+ll.insert(1, "new second");
+ll.shift();
+ll.set(0, "first");
+ll.insert(4, "last thing");
+ll.remove(4);
+ll.remove(0);
+ll.remove(1);
+ll.display();
