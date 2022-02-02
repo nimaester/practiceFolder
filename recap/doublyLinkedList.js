@@ -52,12 +52,35 @@ class DoublyLinkedList {
     this.length--;
     return oldHead;
   }
+  unshift(val) {
+    let newNode = new Node(val);
+    if (!this.length) {
+      this.tail = newNode;
+    } else {
+      newNode.next = this.head;
+      this.head.prev = newNode;
+    }
+    this.head = newNode;
+    this.length++;
+    return this;
+  }
+  display() {
+    let message = [];
+    if (!this.length) {
+      return "BLANK";
+    } else {
+      let start = this.head;
+      while (start) {
+        message.push(String(start.val));
+        start = start.next;
+      }
+    }
+    console.log(message.join(" "));
+  }
 }
 
 let dll = new DoublyLinkedList();
-dll.push(1);
-dll.push(2);
-dll.push(3);
-console.log(dll.shift());
-console.log(dll.shift());
-console.log(dll);
+dll.push("This");
+dll.push("is");
+dll.push("right.");
+dll.display();
