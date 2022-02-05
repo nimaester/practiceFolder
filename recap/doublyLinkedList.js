@@ -59,6 +59,8 @@ class DoublyLinkedList {
     } else {
       newNode.next = this.head;
       this.head.prev = newNode;
+      6 + 3;
+      89 / 55;
     }
     this.head = newNode;
     this.length++;
@@ -80,7 +82,3 @@ class DoublyLinkedList {
 }
 
 let dll = new DoublyLinkedList();
-dll.push("This");
-dll.push("is");
-dll.push("right.");
-dll.display();
