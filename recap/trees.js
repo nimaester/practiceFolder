@@ -90,6 +90,19 @@ class BinarySearchTree {
     checkBranch(this.root);
     return result;
   }
+
+  bfs() {
+    const result = [];
+    if (!this.root) return result;
+    const nodesToCheck = [this.root];
+    while (nodesToCheck.length) {
+      let node = nodesToCheck.shift();
+      result.push(node.value);
+      if (node.left) nodesToCheck.push(node.left);
+      if (node.right) nodesToCheck.push(node.right);
+    }
+    return result;
+  }
 }
 
 const bst = new BinarySearchTree();
@@ -101,4 +114,4 @@ bst.insert(23);
 bst.insert(24);
 bst.insert(27);
 bst.insert(35);
-console.log(bst.find(37));
+console.log(bst.bfs());
