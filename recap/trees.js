@@ -112,6 +112,30 @@ class BinarySearchTree {
     checkNodes(this.root);
     return result;
   }
+
+  dfsInOrder() {
+    const result = [];
+    if (!this.root) return result;
+    const checkNodes = (node) => {
+      if (node.left) checkNodes(node.left);
+      result.push(node.value);
+      if (node.right) checkNodes(node.right);
+    };
+    checkNodes(this.root);
+    return result;
+  }
+
+  dfsInOrderReverse() {
+    const result = [];
+    if (!this.root) return result;
+    const checkNodes = (node) => {
+      if (node.right) checkNodes(node.right);
+      result.push(node.value);
+      if (node.left) checkNodes(node.left);
+    };
+    checkNodes(this.root);
+    return result;
+  }
 }
 
 const bst = new BinarySearchTree();
@@ -123,4 +147,4 @@ bst.insert(8);
 bst.insert(15);
 bst.insert(20);
 
-console.log(bst.dfsPostOrder());
+console.log(bst.dfsInOrderReverse());
