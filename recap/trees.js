@@ -75,22 +75,6 @@ class BinarySearchTree {
     return data;
   }
 
-  order() {
-    const result = [];
-    const checkBranch = (node) => {
-      if (node.left) {
-        checkBranch(node.left);
-      }
-      result.push(node.value);
-
-      if (node.right) {
-        checkBranch(node.right);
-      }
-    };
-    checkBranch(this.root);
-    return result;
-  }
-
   bfs() {
     const result = [];
     if (!this.root) return result;
@@ -103,15 +87,40 @@ class BinarySearchTree {
     }
     return result;
   }
+
+  dfsPreorder() {
+    const result = [];
+    if (!this.root) return result;
+    const checkNodes = (node) => {
+      result.push(node.value);
+      if (node.left) checkNodes(node.left);
+      if (node.right) checkNodes(node.right);
+    };
+
+    checkNodes(this.root);
+    return result;
+  }
+
+  dfsPostOrder() {
+    const result = [];
+    if (!this.root) return result;
+    const checkNodes = (node) => {
+      if (node.left) checkNodes(node.left);
+      if (node.right) checkNodes(node.right);
+      result.push(node.value);
+    };
+    checkNodes(this.root);
+    return result;
+  }
 }
 
 const bst = new BinarySearchTree();
 bst.insert(10);
-bst.insert(20);
+bst.insert(6);
+bst.insert(15);
+bst.insert(3);
 bst.insert(8);
-bst.insert(9);
-bst.insert(23);
-bst.insert(24);
-bst.insert(27);
-bst.insert(35);
-console.log(bst.bfs());
+bst.insert(15);
+bst.insert(20);
+
+console.log(bst.dfsPostOrder());
