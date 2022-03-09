@@ -57,24 +57,6 @@ class BinarySearchTree {
     }
   }
 
-  display() {
-    const node = this.root;
-    const data = [];
-    const queue = [node];
-
-    while (queue.length) {
-      node = queue.shift();
-      data.push(node.value);
-      if (node.left) {
-        queue.push(node.left);
-      }
-      if (node.right) {
-        queue.push(node.right);
-      }
-    }
-    return data;
-  }
-
   bfs() {
     const result = [];
     if (!this.root) return result;
