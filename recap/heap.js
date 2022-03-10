@@ -12,9 +12,10 @@ class MaxBinaryHeap {
     const parent = Math.ceil(child / 2) - 1;
 
     if (this.values[child] > this.values[parent] && parent !== -1) {
-      let tempChild = this.values[child];
-      this.values[child] = this.values[parent];
-      this.values[parent] = tempChild;
+      [this.values[child], this.values[parent]] = [
+        this.values[parent],
+        this.values[child],
+      ];
       this.compareValues(parent);
     }
   }
@@ -62,3 +63,5 @@ class MaxBinaryHeap {
 }
 
 let h = new MaxBinaryHeap();
+h.insert(55);
+console.log(h.showValues());
