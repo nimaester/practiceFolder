@@ -36,6 +36,7 @@ class MaxBinaryHeap {
       let two = parent * 2 + 2;
 
       let max = Math.max(this.values[one], this.values[two]);
+      if (this.values[one] === undefined) break;
       if (two >= this.values.length) max = this.values[one];
       let maxIdx = this.values.indexOf(max);
 
