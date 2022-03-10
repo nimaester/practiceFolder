@@ -11,7 +11,8 @@ class MaxBinaryHeap {
     const child = idx;
     const parent = Math.ceil(child / 2) - 1;
 
-    if (this.values[child] > this.values[parent] && parent !== -1) {
+    if (parent === -1) return;
+    if (this.values[child] > this.values[parent]) {
       [this.values[child], this.values[parent]] = [
         this.values[parent],
         this.values[child],
@@ -24,10 +25,6 @@ class MaxBinaryHeap {
     this.values.push(val);
     this.compareValues(this.values.length - 1);
     return this;
-  }
-
-  showValues() {
-    return this.values;
   }
 
   fixHeap() {

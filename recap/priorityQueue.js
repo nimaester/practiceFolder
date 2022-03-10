@@ -32,14 +32,43 @@ class PriorityQueue {
     return this;
   }
 
-  dequeue() {}
+  fixQueue() {
+    let parent = 0;
+    while (true) {
+      let one = parent * 2 + 1;
+      let two = parent * 2 + 2;
+
+      let min;
+      if (this.values[one] === undefined) {
+        break;
+      } else if (two >= this.values.length) {
+        min = this.values[one];
+      } else if (this.values[one].priority < this.values[two].priority) {
+        min = this.values[one];
+      } else {
+        min = this.values[two];
+      }
+      let minIdx = this.values.indexOf(min);
+
+      if (min.priority < this.values[parent].priority) {
+        let temp = this.values[parent];
+        this.values[parent] = this.values[minIdx];
+        this.values[minIdx] = temp;
+        parent = minIdx;
+      } else {
+        break;
+      }
+    }
+  }
+
+  dequeue() {
+    if (!this.values.length) return undefined;
+    if (this.values.length === 1) return this.values.pop();
+    const min = this.values.shift();
+    this.values.unshift(this.values.pop());
+    this.fixQueue();
+    return min;
+  }
 }
 
 let p = new PriorityQueue();
-p.enqueue("five", 5);
-p.enqueue("four", 4);
-
-p.enqueue("one", 1);
-p.enqueue("one", 0);
-p.enqueue("one", -1);
-console.log(p.values);
