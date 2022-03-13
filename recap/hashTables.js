@@ -16,16 +16,20 @@ class HashTable {
     const idx = this._hash(key);
     if (!this.keyMap[idx]) this.keyMap[idx] = [];
     this.keyMap[idx].push([key, val]);
+    return key;
   }
 
   get(key) {
     const idx = this._hash(key);
     if (this.keyMap[idx].length) {
-      for (let k of this.keyMap[idx]) {
-        if (k[0] === key) return k[1];
-      }
+      return this.keyMap[idx].find((k) => k[0] === key)[1];
     }
     return undefined;
+  }
+
+  keys() {
+    let hashKeys = [];
+    if (!this.keyMap.length) return hashKeys;
   }
 }
 
@@ -33,6 +37,3 @@ let h = new HashTable();
 h.set("apple", "red");
 h.set("kiwi", "green");
 h.set("banana", "yellow");
-console.log(h.get("kiwi"));
-console.log(h.get("apple"));
-console.log(h.get("banana"));
