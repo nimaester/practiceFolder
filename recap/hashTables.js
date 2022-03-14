@@ -1,5 +1,5 @@
 class HashTable {
-  constructor(size = 2) {
+  constructor(size = 59) {
     this.keyMap = new Array(size);
   }
 
@@ -30,13 +30,28 @@ class HashTable {
   keys() {
     let hashKeys = [];
     if (!this.keyMap.length) return hashKeys;
+    for (const key of this.keyMap) {
+      if (key) hashKeys.push(key[0]);
+    }
+    return hashKeys;
   }
 
-  get() {}
+  values() {
+    const values = [];
+    for (const subArr of this.keyMap) {
+      if (subArr) {
+        for (const valid of subArr) {
+          if (!values.includes(valid[1])) values.push(valid[1]);
+        }
+      }
+    }
+    return values;
+  }
 }
 
 let h = new HashTable();
 h.set("apple", "red");
-h.set("kiwi", "green");
+h.set("kiwi", "orange");
 h.set("banana", "yellow");
-h.set("banann", "green");
+h.set("orange", "orange");
+console.log(h.values());
