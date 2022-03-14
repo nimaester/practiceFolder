@@ -31,9 +31,12 @@ class HashTable {
     let hashKeys = [];
     if (!this.keyMap.length) return hashKeys;
   }
+
+  get() {}
 }
 
 let h = new HashTable();
 h.set("apple", "red");
 h.set("kiwi", "green");
 h.set("banana", "yellow");
+h.set("banann", "green");
