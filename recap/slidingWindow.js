@@ -57,9 +57,7 @@ const smallesSubArrayWithAGreaterSum = (arr, sum) => {
   while (j < arr.length) {
     let currentLength = j - i + 1;
     if (currentSum >= sum) {
-      if (minLength === 0) {
-        minLength = currentLength;
-      } else if (currentLength < minLength) {
+      if (minLength === 0 || currentLength < minLength) {
         minLength = currentLength;
       }
       currentSum -= arr[i];
@@ -73,31 +71,9 @@ const smallesSubArrayWithAGreaterSum = (arr, sum) => {
   return minLength;
 };
 
-console.log(smallesSubArrayWithAGreaterSum([2, 1, 8, 2, 3, 2], 7));
+console.log(smallesSubArrayWithAGreaterSum([2, 1, 1, 2, 3, 2], 9));
 // console.log(minSubArraySum([3, 1, 7, 11, 2, 9, 8, 21, 62, 33, 19], 52));
 
 const findLongestSubstring = (str) => {
-  if (!str.length) return 0;
-  let i = 0;
-  let j = 1;
-  let longest = 1;
-  let current = 0;
-  let checked = {};
-  checked[str[i]] = i;
-
-  while (j < str.length) {
-    if (!checked.hasOwnProperty(str[j])) {
-      checked[str[j]] = j;
-      current = j - i + 1;
-      if (current > longest) longest = current;
-      j++;
-    } else {
-      i = checked[str[j]] + 1;
-      j = i + 1;
-      checked = {};
-      checked[str[i]] = i;
-    }
-  }
-
   return longest;
 };
