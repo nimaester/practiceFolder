@@ -48,10 +48,3 @@ class HashTable {
     return values;
   }
 }
-
-let h = new HashTable();
-h.set("apple", "red");
-h.set("kiwi", "orange");
-h.set("banana", "yellow");
-h.set("orange", "orange");
-console.log(h.values());

@@ -45,6 +45,35 @@ const minSubArraySum = (arr, num) => {
   return shortest === null ? 0 : shortest;
 };
 
+// Given an array of positive numbers and a positive number ‘S,’ find the length of the
+// smallest contiguous subarray whose sum is greater than or equal to ‘S’. Return 0 if no such subarray exists.
+
+const smallesSubArrayWithAGreaterSum = (arr, sum) => {
+  let i = 0;
+  let j = 0;
+  let currentSum = arr[j];
+  let minLength = 0;
+
+  while (j < arr.length) {
+    let currentLength = j - i + 1;
+    if (currentSum >= sum) {
+      if (minLength === 0) {
+        minLength = currentLength;
+      } else if (currentLength < minLength) {
+        minLength = currentLength;
+      }
+      currentSum -= arr[i];
+      i++;
+    } else {
+      j++;
+      currentSum += arr[j];
+    }
+  }
+
+  return minLength;
+};
+
+console.log(smallesSubArrayWithAGreaterSum([2, 1, 8, 2, 3, 2], 7));
 // console.log(minSubArraySum([3, 1, 7, 11, 2, 9, 8, 21, 62, 33, 19], 52));
 
 const findLongestSubstring = (str) => {
@@ -72,14 +101,3 @@ const findLongestSubstring = (str) => {
 
   return longest;
 };
-
-// console.log(findLongestSubstring("gamestop"));
-
-const fun = (a) => {
-  if (!b) return a;
-  return function (b) {
-    return a + b;
-  };
-};
-
-console.log(fun(1));
