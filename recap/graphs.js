@@ -46,13 +46,13 @@ class Graph {
   }
 
   dfsGraphTraversal(vertex) {
+    const seen = {};
     const result = [];
-    const visited = {};
     const dfs = (vertex) => {
       if (!vertex) return;
+      seen[vertex] = true;
       result.push(vertex);
-      visited[vertex] = true;
-      this.adjacencyList[vertex].forEach((v) => (!visited[v] ? dfs(v) : null));
+      this.adjacencyList[vertex].forEach((v) => (seen[v] ? null : dfs(v)));
     };
     dfs(vertex);
     return result;
@@ -70,8 +70,28 @@ class Graph {
       visited[vertex] = true;
       this.adjacencyList[currentVertex].forEach((v) => {
         if (!visited[v]) {
-          visited[v] = true;
           stack.push(v);
+        }
+      });
+    }
+    return result;
+  }
+
+  bfsGraphTraversal(vertex) {
+    const result = [];
+    const visited = {};
+    visited[vertex] = true;
+    const queue = [vertex];
+    let current;
+
+    while (queue.length) {
+      current = queue.shift();
+      result.push(current);
+
+      this.adjacencyList[current].forEach((v) => {
+        if (!visited[v]) {
+          visited[v] = true;
+          queue.push(v);
         }
       });
     }
@@ -94,4 +114,4 @@ g.addEdge("D", "E");
 g.addEdge("D", "F");
 g.addEdge("E", "F");
 
-console.log(g.dfsGraphTraversalIterative("A"));
+console.log(g.bfsGraphTraversal("A"));
