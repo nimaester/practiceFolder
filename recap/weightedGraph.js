@@ -13,11 +13,11 @@ class WeightedGraph {
   }
 }
 
-const wg = new WeightedGraph();
-wg.addVertex("A");
-wg.addVertex("B");
-wg.addVertex("C");
-wg.addEdge("A", "B", 5);
-wg.addEdge("A", "C", 3);
-wg.addEdge("B", "C", 1);
-console.log(wg.adjacencyList);
+// const wg = new WeightedGraph();
+// wg.addVertex("A");
+// wg.addVertex("B");
+// wg.addVertex("C");
+// wg.addEdge("A", "B", 5);
+// wg.addEdge("A", "C", 3);
+// wg.addEdge("B", "C", 1);
+// console.log(wg.adjacencyList);
