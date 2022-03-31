@@ -72,3 +72,5 @@ class PriorityQueue {
 }
 
 let p = new PriorityQueue();
+
+module.exports = PriorityQueue;

@@ -21,6 +21,6 @@ $   used to specify the end of the string that matches the condition
 // console.log(/^this$/.test(smallStr));
 
 // console.log(/[aeiou1]/.test("shyn1"));
-console.log(/this is your [0-9]/.test(str));
-let data = /(file)/.exec(files);
-console.log(data);
+// console.log(/this is your [0-9]/.test(str));
+// let data = /(file)/.exec(files);
+// console.log(data);

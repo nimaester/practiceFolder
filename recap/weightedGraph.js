@@ -1,3 +1,5 @@
+const PriorityQueue = require("./priorityQueue");
+
 class WeightedGraph {
   constructor() {
     this.adjacencyList = {};
@@ -21,3 +23,6 @@ class WeightedGraph {
 // wg.addEdge("A", "C", 3);
 // wg.addEdge("B", "C", 1);
 // console.log(wg.adjacencyList);
+
+let p = new PriorityQueue();
+console.log(p);
