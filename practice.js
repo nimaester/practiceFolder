@@ -1,52 +1,38 @@
-var lengthOfLastWord = function (s) {
-  s = s.trim().split(" ");
-  return s[s.length - 1].length;
-};
+var searchInsert = function (nums, target) {
+  let left = 0;
+  let right = nums.length - 1;
+  let mid;
 
-// console.log(lengthOfLastWord("   fly me   to   the moon  "));
-const del = (items) => {
-  for (let i = 0; i < items.length; i++) {
-    if (items[i].length === 0) {
-      items.splice(i, 1);
+  while (left <= right) {
+    mid = Math.floor((left + right) / 2);
+    if (nums[mid] === target) return mid;
+    if (target < nums[mid]) {
+      right = mid - 1;
+    } else {
+      left = mid + 1;
     }
   }
-  return items;
+  return left;
 };
 
-const f = (n) => (n <= 1 ? 1 : n * f(n - 1));
-let g = f(4);
+const bad = (n, bad) => {
+  let left = 1;
+  let right = n;
+  let mid;
+  let min;
 
-function fun(a) {
-  return (a += 1);
-}
-
-function funs(func, items) {
-  let i = 0;
-  for (let item of items) {
-    if (func(item)) {
-      items[i] = item;
-      i += 1;
+  while (left <= right) {
+    mid = Math.floor((left + right) / 2);
+    console.log(left, right, mid, min);
+    if (bad === mid) {
+      min = mid;
+      left = mid + 1;
+    } else {
+      right = mid - 1;
     }
   }
-  items.splice(i);
-  return items;
-}
-
-const check = (array) => {
-  let pos = false;
-  let neg = false;
-
-  array.forEach((num) => {
-    pos = num > 0;
-    neg = num < 0;
-  });
-  return [pos, neg];
+  return min;
 };
 
-const rep = (s) => {
-  let sp = s.split(",").map((str) => str.replace(/[^\w]/gi, ""));
-  return sp;
-};
-
-let sen = " - type, this, in, there,";
-console.log(rep(sen));
+// console.log(searchInsert([1, 3, 5, 6], 2));
+console.log(bad(3, 1));
