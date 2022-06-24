@@ -28,4 +28,6 @@ const bubblesort = (arr) => {
   return arr;
 };
 
+const mergesort = (arr) => {};
+
 console.log(bubblesort([3, 4, 1, 2, 8, 0]));
