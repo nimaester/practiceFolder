@@ -6,27 +6,27 @@ const merge = (arr1, arr2) => {
   while (i < arr1.length && j < arr2.length) {
     if (arr2[j] > arr1[i]) {
       results.push(arr1[i]);
-      i ++;
+      i++;
     } else {
       results.push(arr2[j]);
-      j ++;
+      j++;
     }
   }
 
   while (i < arr1.length) {
     results.push(arr1[i]);
-    i ++;
+    i++;
   }
 
   while (j < arr2.length) {
-    results.push(arr2[j])
-    j ++
+    results.push(arr2[j]);
+    j++;
   }
 
   return results;
-}
+};
 
-console.log(merge([100,101], [1,2,3,4]))
+console.log(merge([100, 101], [1, 2, 3, 4]));
 
 const mergeSort = (arr) => {
   if (arr.length <= 1) {
@@ -37,6 +37,6 @@ const mergeSort = (arr) => {
   let left = mergeSort(arr.slice(0, mid));
   let right = mergeSort(arr.slice(mid));
   return merge(left, right);
-}
+};
 
-console.log(mergeSort([9,10,1,0,2,3,4,8,7,6]))
+console.log(mergeSort([9, 10, 1, 0, 2, 3, 4, 8, 7, 6]));
