@@ -10,4 +10,22 @@ const isPalindrome = (num) => {
   return true;
 };
 
-console.log(isPalindrome(1111));
+// console.log(isPalindrome(1111));
+
+const bubblesort = (arr) => {
+  let sorted = false;
+  while (!sorted) {
+    sorted = true;
+    for (let i = 0; i < arr.length; i++) {
+      let num = arr[i];
+      let nextNum = arr[i + 1];
+      if (num > nextNum) {
+        [arr[i], arr[i + 1]] = [arr[i + 1], arr[i]];
+        sorted = false;
+      }
+    }
+  }
+  return arr;
+};
+
+console.log(bubblesort([3, 4, 1, 2, 8, 0]));
