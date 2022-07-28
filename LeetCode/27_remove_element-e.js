@@ -14,7 +14,14 @@
 var removeElement = function (nums, val) {
   let start = 0;
   for (let i = 0; i < nums.length; i++) {
-    if (nums[i] !== val) (nums[start] = nums[i]), start++;
+    if (nums[i] !== val) {
+      nums[start] = nums[i];
+      start++;
+    }
   }
-  return start;
+  return nums.slice(0, start);
 };
+
+let arr = [2, 1, 2, 3, 4, 1];
+
+console.log(removeElement(arr, 1));
