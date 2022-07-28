@@ -16,7 +16,7 @@
 var merge = function (nums1, m, nums2, n) {
   nums1.splice(m);
   let i = 0;
-  j = 0;
+  let j = 0;
   while (j < nums2.length) {
     if (nums2[j] < nums1[i] || nums1[i] === undefined) {
       nums1.splice(i, 0, nums2[j]);
