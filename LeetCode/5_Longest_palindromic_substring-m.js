@@ -16,17 +16,13 @@ const longestPalidromeSubstring = (str) => {
   for (let m = str.length; m > 0; m--) {
     let i = 0;
     let j = m;
-    while (j <= str.length) {
+    while (j < str.length) {
       let substring = str.slice(i, j);
       if (isPalidrome(substring)) return substring;
-      else {
-        i++;
-        j++;
-      }
+      else i++, j++;
     }
   }
   return "";
 };
 
-console.log(isPalidrome("eaa"));
-console.log(longestPalidromeSubstring("babad"));
+console.log(longestPalidromeSubstring("43aba55"));
