@@ -20,8 +20,8 @@
 // we can use Object.keys so we can use the built in sort function
 // if a key and another key is equal in occurence,
 //    we can compare the strings in alphabetical order by using localeCompare
-//    that will return a 1 or -1 and we can sort using that
-// if first key value is less than second key value we put the seconde key before first key
+//    that will return a 1 or -1 and we can sort the strings using that
+// if first key value is less than second key value we put the second key before first key
 // return the number of words by slicing our sorted words by k
 
 var topKFrequent = function (words, k) {
@@ -29,10 +29,11 @@ var topKFrequent = function (words, k) {
   for (const word of words) {
     counts.hasOwnProperty(word) ? counts[word]++ : (counts[word] = 1);
   }
-  const sorted = Object.keys(counts).sort((a, b) =>
-    counts[a] === counts[b] ? a.localeCompare(b) : counts[b] - counts[a]
-  );
-  return sorted.slice(0, k);
+  return Object.keys(counts)
+    .sort((a, b) =>
+      counts[a] === counts[b] ? a.localeCompare(b) : counts[b] - counts[a]
+    )
+    .slice(0, k);
 };
 
 const exp = [
