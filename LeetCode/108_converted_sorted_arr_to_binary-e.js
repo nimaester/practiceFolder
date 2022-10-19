@@ -30,3 +30,5 @@ var sortedArrayToBST = function (nums) {
 
   return root;
 };
+
+console.log(sortedArrayToBST([5, 6, 7, 8]));
