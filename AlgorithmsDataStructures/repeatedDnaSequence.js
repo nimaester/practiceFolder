@@ -23,16 +23,18 @@
 // return that container when fininsh looping
 
 const findRepeatedSequences = (s, k) => {
-  const results = new Map();
-  const checkedStr = new Map();
+  const results = new Set();
+  const checkedStr = new Set();
 
   for (let i = 0; i < s.length; i++) {
     let currentStr = s.slice(i, i + k);
     if (checkedStr.has(currentStr) && !results.has(currentStr)) {
-      results.set(currentStr);
+      results.add(currentStr);
     } else {
-      checkedStr.set(currentStr);
+      checkedStr.add(currentStr);
     }
   }
-  return [...results.keys()];
+  return Array.from(results);
 };
+
+console.log(findRepeatedSequences("AAATTATTAAATT", 5));
