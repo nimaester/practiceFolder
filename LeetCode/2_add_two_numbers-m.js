@@ -1,6 +1,7 @@
 // 2. Add Two Numbers
-
-// You are given two non-empty linked lists representing two non-negative integers. The digits are stored in reverse order, and each of their nodes contains a single digit. Add the two numbers and return the sum as a linked list.
+// You are given two non-empty linked lists representing two
+// non-negative integers. The digits are stored in reverse order, and each of their nodes contains a single digit.
+// Add the two numbers and return the sum as a linked list.
 
 // You may assume the two numbers do not contain any leading zero, except the number 0 itself.
 
@@ -17,27 +18,45 @@
 // Input: l1 = [9,9,9,9,9,9,9], l2 = [9,9,9,9]
 // Output: [8,9,9,9,0,0,0,1]
 
-const getValue = (ll) => {
-  let result = [];
-  let temp = ll;
-  while (temp) {
-    result.push(temp.val);
-    temp = temp.next;
-  }
-  return BigInt(result.reverse().join(""));
-};
-const addTwoNumbers = (l1, l2) => {
-  let l1Val = getValue(l1);
-  let l2Val = getValue(l2);
-  let sumOfLl = (l2Val + l1Val).toString().split("");
+const LinkedList = require("../AlgorithmsDataStructures/DataStructures/LinkedList");
 
-  let newNode = new ListNode(0);
-  let pos = newNode;
-  while (sumOfLl.length > 0) {
-    let temp = new ListNode(Number(sumOfLl.pop()));
-    pos.next = temp;
-    pos = pos.next;
+class Node {
+  constructor(value, next = null) {
+    this.value = value;
+    this.next = next;
   }
+}
 
-  return newNode.next;
+var addTwoNumbers = function (l1, l2) {
+  var List = new Node(0);
+  var head = List;
+  var sum = 0;
+  var carry = 0;
+
+  while (l1 !== null || l2 !== null || sum > 0) {
+    if (l1 !== null) {
+      sum = sum + l1.value;
+
+      l1 = l1.next;
+    }
+    if (l2 !== null) {
+      sum = sum + l2.value;
+      l2 = l2.next;
+    }
+    if (sum >= 10) {
+      carry = 1;
+      sum = sum - 10;
+    }
+    let newNode = new Node(sum);
+    head.next = newNode;
+    head = head.next;
+    sum = carry;
+    carry = 0;
+  }
+  return List.next;
 };
+
+const l1 = LinkedList.createLinkedList(2, 4, 3);
+const l2 = LinkedList.createLinkedList(5, 6, 4);
+// console.log(l1);
+console.log(addTwoNumbers(l1.head, l2.head));
